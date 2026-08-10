@@ -1,6 +1,6 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
 import './OverviewSection.css'
-import mairaBuilding from '../assets/maira-building.jpg'
+import mairaBuilding from '../assets/myrabgrmr.png'
 import Counter from '../components/Counter'
 import {
   Layers,
@@ -215,9 +215,9 @@ export function OverviewSection() {
 
             <motion.div
               className="about-image-frame"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              whileHover={{ scale: 1.03 }}
+              // animate={{ y: [0, -8, 0] }}
+              // transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              // whileHover={{ scale: 1.03 }}
             >
               <img
                 src={mairaBuilding}

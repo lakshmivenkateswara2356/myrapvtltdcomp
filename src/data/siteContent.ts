@@ -131,16 +131,13 @@ export const stats: StatItem[] = [
 ]
 
 export const clientNames: ClientItem[] = [
-  { name: 'JSW' },
-  { name: 'Adani' },
-  { name: 'L&T Construction' },
-  { name: 'Reliance' },
-  { name: 'Vedanta' },
-  { name: 'Infosys' },
-  { name: 'Wipro' },
-  { name: 'Dr.Reddy’s' },
-  { name: 'Cipla' },
-  { name: 'Aurobindo' },
+  { name: 'Optimus Pharma' },
+  { name: 'Dr. Reddy’s' },
+  { name: 'Aurora Pharma' },
+  { name: 'Orbicular' },
+  { name: 'RTV Industries' },
+  { name: 'Huhtamaki' },
+  
 ]
 
 export const contactDetails = {

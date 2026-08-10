@@ -64,9 +64,9 @@ export function HomePage() {
           <CtaSection />
         </ErrorBoundary>
 
-        <ErrorBoundary fallbackName="Contact Section">
+        {/* <ErrorBoundary fallbackName="Contact Section">
           <ContactSection />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
       </main>
 
       <ErrorBoundary fallbackName="Footer Section">

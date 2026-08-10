@@ -13,6 +13,13 @@
   box-sizing: border-box;
 }
 
+.contact-map-card{margin-top:24px}
+.contact-map{height:320px;border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.contact-map iframe{width:100%;height:100%;border:0}
+.office-address{margin:16px 0;color:#cbd5e1;line-height:1.7}
+.direction-btn{display:inline-flex;padding:12px 22px;border-radius:999px;background:#00d4ff;color:#04111d;text-decoration:none;font-weight:700}
+.direction-btn:hover{transform:translateY(-2px)}
+
 .contact-bg-glow {
   position: absolute;
   top: 30%;

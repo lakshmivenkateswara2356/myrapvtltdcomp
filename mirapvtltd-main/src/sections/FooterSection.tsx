@@ -93,7 +93,7 @@ export function FooterSection() {
           ))}
 
           {/* Newsletter Column */}
-          <motion.div className="footer-newsletter-col" variants={fadeUp}>
+          {/* <motion.div className="footer-newsletter-col" variants={fadeUp}>
             <h4 className="footer-col-heading">Stay Updated</h4>
             <p className="footer-newsletter-desc">
               Subscribe for engineering insights, project updates, and industry news.
@@ -123,7 +123,7 @@ export function FooterSection() {
               </form>
             )}
             <p className="footer-newsletter-note">No spam. Unsubscribe any time.</p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* Bottom Bar */}

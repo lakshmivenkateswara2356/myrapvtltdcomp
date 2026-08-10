@@ -1,139 +1,719 @@
-import { useEffect, useState } from 'react'
-import './Navbar.css'
-import COmpalogog from '../assets/complogo.png'
-import { ChevronRight } from 'lucide-react'
+import { useEffect, useState } from "react";
+import "./Navbar.css";
+
+import {
+  ChevronRight,
+  ChevronDown,
+} from "lucide-react";
+
+import {
+  NavLink,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
+
+import Complogo from "../assets/complogo.png";
+
 
 const navItems = [
-  { id: 'home', label: 'Home' },
-  { id: 'services', label: 'Services ▾' },
-  { id: 'solutions', label: 'Solutions ▾' },
-  { id: 'about', label: 'About Us' },
-  { id: 'why-us', label: 'Why Choose Us' },
-  { id: 'statistics', label: 'Statistics' },
-  { id: 'clients', label: 'Clients' },
-  { id: 'contact', label: 'Contact' },
-]
+  { path: "/", label: "Home" },
+
+  { path: "/about", label: "About Us" },
+
+  {
+    path: "/services",
+    label: "Services",
+    dropdown: true,
+  },
+
+  {
+    path: "/solutions",
+    label: "Solutions",
+    dropdown: true,
+  },
+
+  {
+    path: "/why-choose-us",
+    label: "Why Choose Us",
+  },
+
+  {
+    path: "/clients",
+    label: "Clients",
+  },
+
+  {
+    path: "/contact",
+    label: "Contact",
+  },
+];
+
+
+/* =========================================================
+   SERVICES DROPDOWN
+========================================================= */
+
+const serviceItems = [
+  {
+    path: "/services/electrical",
+    label: "Electrical Engineering",
+  },
+
+  {
+    path: "/services/hvac",
+    label: "HVAC Solutions",
+  },
+
+  {
+    path: "/services/fire-safety",
+    label: "Fire & Safety",
+  },
+
+  {
+    path: "/services/plumbing",
+    label: "Plumbing & Piping",
+  },
+
+  {
+    path: "/services/facility-management",
+    label: "Facility Management",
+  },
+];
+
+
+/* =========================================================
+   SOLUTIONS DROPDOWN
+========================================================= */
+
+const solutionItems = [
+  {
+    path: "/solutions/industrial",
+    label: "Industrial Solutions",
+  },
+
+  {
+    path: "/solutions/commercial",
+    label: "Commercial Solutions",
+  },
+
+  {
+    path: "/solutions/healthcare",
+    label: "Healthcare Solutions",
+  },
+
+  {
+    path: "/solutions/cleanroom",
+    label: "Cleanroom Solutions",
+  },
+];
+
 
 export function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('home')
-  const [scrolled, setScrolled] = useState(false)
 
-  // Scroll listener for active section & navbar background state
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const [scrolled, setScrolled] = useState(false);
+
+  const [servicesOpen, setServicesOpen] = useState(false);
+
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+
+
+  /* =========================================================
+     CHECK CURRENT PAGE
+     
+     Navbar behaves differently only on HOME PAGE.
+  ========================================================= */
+
+  const isHomePage = location.pathname === "/";
+
+
+  /* =========================================================
+     SCROLL HANDLING
+     
+     HOME:
+       scrollY > 80 -> scrolled
+
+     OTHER PAGES:
+       always treated as scrolled
+       so navbar remains visible.
+  ========================================================= */
+
   useEffect(() => {
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40)
-    }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
+      if (isHomePage) {
 
-    const sectionIds = ['home', 'about', 'services', 'why-us', 'statistics', 'clients', 'contact']
-    const sections = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[]
+        setScrolled(window.scrollY > 80);
 
-    if (!sections.length) return () => window.removeEventListener('scroll', handleScroll)
+      } else {
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      {
-        root: null,
-        threshold: 0.25,
-        rootMargin: '-20% 0px -50% 0px',
+        setScrolled(true);
+
       }
-    )
 
-    sections.forEach((section) => observer.observe(section))
+    };
+
+
+    handleScroll();
+
+
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      {
+        passive: true,
+      }
+    );
+
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-      observer.disconnect()
-    }
-  }, [])
 
-  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault()
-    setMenuOpen(false)
-    const element = document.getElementById(id)
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+
+    };
+
+  }, [isHomePage]);
+
+
+  /* =========================================================
+     ROUTE CHANGE
+     
+     Close dropdowns and mobile menu.
+  ========================================================= */
+
+  useEffect(() => {
+
+    setServicesOpen(false);
+
+    setSolutionsOpen(false);
+
+    setMenuOpen(false);
+
+    /*
+      On non-home pages navbar should immediately
+      appear without waiting for scroll.
+    */
+
+    if (location.pathname !== "/") {
+
+      setScrolled(true);
+
+    } else {
+
+      setScrolled(window.scrollY > 80);
+
+    }
+
+  }, [location.pathname]);
+
+
+  /* =========================================================
+     CONTACT SCROLL
+  ========================================================= */
+
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    sectionId: string
+  ) => {
+
+    e.preventDefault();
+
+
+    setMenuOpen(false);
+
+    setServicesOpen(false);
+
+    setSolutionsOpen(false);
+
+
+    const element =
+      document.getElementById(sectionId);
+
+
     if (element) {
-      const offset = 80
-      const bodyRect = document.body.getBoundingClientRect().top
-      const elementRect = element.getBoundingClientRect().top
-      const elementPosition = elementRect - bodyRect
-      const offsetPosition = elementPosition - offset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      })
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
 
-      // Update URL hash without jumping
-      if (window.history.pushState) {
-        window.history.pushState(null, '', `#${id}`)
-      } else {
-        window.location.hash = `#${id}`
-      }
+    } else {
+
+      navigate(`/#${sectionId}`);
+
     }
-  }
+
+  };
+
+
+  /* =========================================================
+     MOBILE SERVICES DROPDOWN
+  ========================================================= */
+
+  const handleServicesClick = (
+    e: React.MouseEvent
+  ) => {
+
+    if (window.innerWidth <= 768) {
+
+      e.preventDefault();
+
+      setServicesOpen(
+        (prev) => !prev
+      );
+
+      setSolutionsOpen(false);
+
+    }
+
+  };
+
+
+  /* =========================================================
+     MOBILE SOLUTIONS DROPDOWN
+  ========================================================= */
+
+  const handleSolutionsClick = (
+    e: React.MouseEvent
+  ) => {
+
+    if (window.innerWidth <= 768) {
+
+      e.preventDefault();
+
+      setSolutionsOpen(
+        (prev) => !prev
+      );
+
+      setServicesOpen(false);
+
+    }
+
+  };
+
+
+  /* =========================================================
+     RENDER
+  ========================================================= */
 
   return (
-    <header className={`sticky-header ${scrolled ? 'scrolled' : ''}`}>
+
+    <header
+      className={`
+        sticky-header
+        ${scrolled ? "scrolled" : ""}
+      `}
+    >
+
       <div className="header-container">
-        {/* Brand Logo */}
-        <a
-          href="#home"
+
+
+        {/* =====================================================
+            LOGO
+        ===================================================== */}
+
+        <NavLink
+          to="/"
           className="brand-logo-link"
-          onClick={(e) => scrollToSection(e, 'home')}
-          aria-label="MAIRA Home"
+          onClick={() =>
+            setMenuOpen(false)
+          }
         >
-          <img src={COmpalogog} alt="MAIRA Logo" className="brand-logo-img" />
-          <span className="brand-logo-text">MAIRA</span>
-        </a>
 
-        {/* Mobile Toggle Button */}
-        <button
-          className={`mobile-menu-toggle ${menuOpen ? 'open' : ''}`}
-          aria-label="Toggle Navigation"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((prev) => !prev)}
+          <img
+            src={Complogo}
+            alt="Maira Facilities Management"
+            className="brand-logo"
+          />
+
+        </NavLink>
+
+
+        {/* =====================================================
+            NAVIGATION
+        ===================================================== */}
+
+        <nav
+          className={`
+            main-nav-links
+            ${scrolled ? "show-nav" : ""}
+            ${menuOpen ? "open" : ""}
+          `}
         >
-          <span />
-          <span />
-          <span />
-        </button>
 
-        {/* Desktop Navigation Links */}
-        <nav className={`main-nav-links ${menuOpen ? 'open' : ''}`}>
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={`#${item.id}`}
-              className={activeSection === item.id ? 'active' : ''}
-              onClick={(e) => scrollToSection(e, item.id)}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+
+
+            /* =================================================
+               SERVICES
+            ================================================= */
+
+            if (
+              item.label === "Services"
+            ) {
+
+              return (
+
+                <div
+                  key={item.path}
+                  className={`
+                    nav-dropdown
+                    ${
+                      servicesOpen
+                        ? "dropdown-open"
+                        : ""
+                    }
+                  `}
+                  onMouseEnter={() => {
+
+                    if (
+                      window.innerWidth > 768
+                    ) {
+
+                      setServicesOpen(true);
+
+                    }
+
+                  }}
+                  onMouseLeave={() => {
+
+                    if (
+                      window.innerWidth > 768
+                    ) {
+
+                      setServicesOpen(false);
+
+                    }
+
+                  }}
+                >
+
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `
+                      nav-dropdown-trigger
+                      ${
+                        isActive ||
+                        location.pathname.startsWith(
+                          "/services"
+                        )
+                          ? "active"
+                          : ""
+                      }
+                      `
+                    }
+                    onClick={
+                      handleServicesClick
+                    }
+                  >
+
+                    <span>
+                      {item.label}
+                    </span>
+
+
+                    <ChevronDown
+                      size={15}
+                      className={`
+                        dropdown-arrow
+                        ${
+                          servicesOpen
+                            ? "rotate"
+                            : ""
+                        }
+                      `}
+                    />
+
+                  </NavLink>
+
+
+                  {/* SERVICES DROPDOWN */}
+
+                  <div
+                    className={`
+                      nav-dropdown-menu
+                      ${
+                        servicesOpen
+                          ? "visible"
+                          : ""
+                      }
+                    `}
+                  >
+
+                    {serviceItems.map(
+                      (service) => (
+
+                        <NavLink
+                          key={service.path}
+                          to={service.path}
+                          className="nav-dropdown-item"
+                          onClick={() => {
+
+                            setServicesOpen(false);
+
+                            setMenuOpen(false);
+
+                          }}
+                        >
+
+                          <span>
+                            {service.label}
+                          </span>
+
+                          <ChevronRight
+                            size={15}
+                          />
+
+                        </NavLink>
+
+                      )
+                    )}
+
+                  </div>
+
+                </div>
+
+              );
+
+            }
+
+
+            /* =================================================
+               SOLUTIONS
+            ================================================= */
+
+            if (
+              item.label === "Solutions"
+            ) {
+
+              return (
+
+                <div
+                  key={item.path}
+                  className={`
+                    nav-dropdown
+                    ${
+                      solutionsOpen
+                        ? "dropdown-open"
+                        : ""
+                    }
+                  `}
+                  onMouseEnter={() => {
+
+                    if (
+                      window.innerWidth > 768
+                    ) {
+
+                      setSolutionsOpen(true);
+
+                    }
+
+                  }}
+                  onMouseLeave={() => {
+
+                    if (
+                      window.innerWidth > 768
+                    ) {
+
+                      setSolutionsOpen(false);
+
+                    }
+
+                  }}
+                >
+
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `
+                      nav-dropdown-trigger
+                      ${
+                        isActive ||
+                        location.pathname.startsWith(
+                          "/solutions"
+                        )
+                          ? "active"
+                          : ""
+                      }
+                      `
+                    }
+                    onClick={
+                      handleSolutionsClick
+                    }
+                  >
+
+                    <span>
+                      {item.label}
+                    </span>
+
+
+                    <ChevronDown
+                      size={15}
+                      className={`
+                        dropdown-arrow
+                        ${
+                          solutionsOpen
+                            ? "rotate"
+                            : ""
+                        }
+                      `}
+                    />
+
+                  </NavLink>
+
+
+                  {/* SOLUTIONS DROPDOWN */}
+
+                  <div
+                    className={`
+                      nav-dropdown-menu
+                      ${
+                        solutionsOpen
+                          ? "visible"
+                          : ""
+                      }
+                    `}
+                  >
+
+                    {solutionItems.map(
+                      (solution) => (
+
+                        <NavLink
+                          key={solution.path}
+                          to={solution.path}
+                          className="nav-dropdown-item"
+                          onClick={() => {
+
+                            setSolutionsOpen(false);
+
+                            setMenuOpen(false);
+
+                          }}
+                        >
+
+                          <span>
+                            {solution.label}
+                          </span>
+
+                          <ChevronRight
+                            size={15}
+                          />
+
+                        </NavLink>
+
+                      )
+                    )}
+
+                  </div>
+
+                </div>
+
+              );
+
+            }
+
+
+            /* =================================================
+               NORMAL NAVIGATION
+            ================================================= */
+
+            return (
+
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) =>
+                  isActive
+                    ? "active"
+                    : ""
+                }
+                onClick={() =>
+                  setMenuOpen(false)
+                }
+              >
+
+                {item.label}
+
+              </NavLink>
+
+            );
+
+          })}
+
         </nav>
 
-        {/* Get Started Contact CTA */}
+
+        {/* =====================================================
+            CTA
+        ===================================================== */}
+
         <a
-          className="header-cta-btn"
+          className={`
+            header-cta-btn
+            ${scrolled ? "show-cta" : ""}
+          `}
           href="#contact"
-          onClick={(e) => scrollToSection(e, 'contact')}
+          onClick={(e) =>
+            scrollToSection(
+              e,
+              "contact"
+            )
+          }
         >
-          <span>Get Started</span>
-          <ChevronRight size={15} />
+
+          <span>
+            Get Started
+          </span>
+
+          <ChevronRight
+            size={15}
+          />
+
         </a>
+
+
+        {/* =====================================================
+            MOBILE MENU
+        ===================================================== */}
+
+        <button
+          className={`
+            mobile-menu-toggle
+            ${menuOpen ? "open" : ""}
+          `}
+          aria-label="Toggle Navigation"
+          aria-expanded={menuOpen}
+          onClick={() =>
+            setMenuOpen(
+              (prev) => !prev
+            )
+          }
+        >
+
+          <span />
+          <span />
+          <span />
+
+        </button>
+
+
       </div>
+
     </header>
-  )
+
+  );
 }
 
-export default Navbar
+
+export default Navbar;

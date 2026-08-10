@@ -4,6 +4,7 @@ import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, AlertCircle, MessageSqu
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6'
 import './ContactSection.css'
 import { contactDetails } from '../data/siteContent'
+import Footer from './FooterSection'
 
 type FormState = {
   name: string
@@ -91,6 +92,7 @@ export function ContactSection() {
   }
 
   return (
+    <>
     <section className="contact-section-container" id="contact">
       <div className="contact-bg-glow" />
 
@@ -314,8 +316,44 @@ export function ContactSection() {
             )}
           </motion.div>
         </div>
+
+        <div className="glass-contact-card contact-map-card">
+  <h3 className="contact-card-heading">
+    <MapPin size={16} />
+    Our Location
+  </h3>
+
+  <div className="contact-map">
+    <iframe
+      title="MAIRA Facilities Office"
+      src="https://www.google.com/maps?q=Plot%20No%20MIG-178,%20Main%20Rd,%20behind%20Kendriya%20Vihar%20road,%20CG%20Employees%20Colony,%20Mayuri%20Nagar,%20Miyapur,%20Hyderabad,%20Telangana%20500049&output=embed"
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
+
+  <p className="office-address">
+    Plot No : MIG-178, Main Rd, Behind Kendriya Vihar Road,
+    CG Employees Colony (Kendriya Vihar),
+    Mayuri Nagar, Miyapur,
+    Hyderabad, Telangana 500049
+  </p>
+
+  <a
+    className="direction-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://maps.google.com/?q=Plot%20No%20MIG-178,%20Main%20Rd,%20behind%20Kendriya%20Vihar%20road,%20CG%20Employees%20Colony,%20Mayuri%20Nagar,%20Miyapur,%20Hyderabad,%20Telangana%20500049">
+    Get Directions
+  </a>
+</div>
       </div>
+
+      
     </section>
+    <Footer/>
+    </>
   )
 }
 

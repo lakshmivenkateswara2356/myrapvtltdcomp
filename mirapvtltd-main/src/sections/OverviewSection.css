@@ -2,35 +2,99 @@
    ABOUT US SECTION - FIGMA MATCHING PREMIUM DESIGN
    ========================================================================== */
 
-.about-section-container {
-  position: relative;
-  width: 100%;
-  background: #040914;
-  color: #ffffff;
-  padding: 100px 24px;
-  overflow: hidden;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  box-sizing: border-box;
-}
+.about-section-container{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    color:#fff;
 
+    padding:120px 0;
+
+    background:
+    radial-gradient(circle at 20% 10%,rgba(0,212,255,.12),transparent 28%),
+    radial-gradient(circle at 85% 75%,rgba(124,58,237,.10),transparent 30%),
+    radial-gradient(circle at 50% 100%,rgba(0,150,255,.08),transparent 35%),
+    linear-gradient(180deg,#020611 0%,#071323 45%,#040914 100%);
+
+    isolation:isolate;
+}
 /* Background Grid Overlay Pattern */
-.about-grid-overlay {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 1;
+.about-grid-overlay{
+
+position:absolute;
+
+inset:0;
+
+pointer-events:none;
+
+opacity:.45;
+
+background-image:
+
+linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+
+linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+background-size:55px 55px;
+
+mask-image:linear-gradient(to bottom,
+transparent,
+black 15%,
+black 85%,
+transparent);
+
+animation:gridMove 25s linear infinite;
+
+z-index:0;
+
 }
 
+@keyframes gridMove{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+100%{
+
+transform:translateY(55px);
+
+}
+
+}
 /* Radial Ambient Glow Blobs */
-.about-bg-glow {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px);
-  pointer-events: none;
-  z-index: 0;
+.about-bg-glow{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(180px);
+
+opacity:.9;
+
+animation:floatGlow 10s ease-in-out infinite alternate;
+
+will-change:transform;
+
+}
+
+@keyframes floatGlow{
+
+0%{
+
+transform:translateY(0px) scale(1);
+
+}
+
+100%{
+
+transform:translateY(-50px) scale(1.15);
+
+}
+
 }
 
 .glow-cyan-top {
@@ -58,14 +122,24 @@
 }
 
 /* Centered Shell */
-.about-shell {
-  position: relative;
-  z-index: 2;
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 56px;
+.about-shell{
+
+position:relative;
+
+z-index:5;
+
+max-width:1440px;
+
+margin:auto;
+
+padding-inline:32px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:72px;
+
 }
 
 /* Breadcrumb Navigation */
@@ -111,21 +185,62 @@
   gap: 20px;
 }
 
-.about-main-title {
-  font-size: 48px;
-  font-weight: 800;
-  line-height: 1.1;
-  color: #ffffff;
-  margin: 0;
-  letter-spacing: -0.5px;
+.about-main-title{
+
+font-size:clamp(42px,5vw,68px);
+
+font-weight:800;
+
+line-height:1.02;
+
+letter-spacing:-2px;
+
+max-width:650px;
+
+margin:0;
+
 }
 
-.about-title-accent {
-  display: block;
-  background: linear-gradient(135deg, #00d4ff 0%, #5cffb1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 4px;
+.about-title-accent{
+
+display:block;
+
+margin-top:8px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#13D8FF,
+
+#5DEBFF,
+
+#7A5CFF,
+
+#13D8FF
+
+);
+
+background-size:250%;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+animation:textGradient 8s linear infinite;
+
+}
+
+@keyframes textGradient{
+
+100%{
+
+background-position:250%;
+
+}
+
 }
 
 .about-gradient-line {
@@ -136,11 +251,16 @@
   margin: 4px 0 8px 0;
 }
 
-.about-paragraph {
-  font-size: 15px;
-  line-height: 1.75;
-  color: #94a3b8;
-  margin: 0;
+.about-paragraph{
+
+font-size:17px;
+
+line-height:1.95;
+
+color:#a8b5c7;
+
+max-width:620px;
+
 }
 
 .about-cta-row {
@@ -150,23 +270,38 @@
   margin-top: 12px;
 }
 
-.about-btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 48px;
-  padding: 0 32px;
-  border: none;
-  border-radius: 50px;
-  background: linear-gradient(90deg, #0094ff, #00d8ff);
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 148, 255, 0.4);
-  transition: all 0.35s ease;
+.about-btn-primary{
+
+position:relative;
+
+overflow:hidden;
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+height:58px;
+
+padding:0 38px;
+
+border-radius:100px;
+
+background:
+
+linear-gradient(135deg,#00b7ff,#0066ff);
+
+box-shadow:
+
+0 15px 45px rgba(0,140,255,.35),
+
+inset 0 1px rgba(255,255,255,.4);
+
+transition:.45s;
+
 }
 
 .about-btn-primary:hover {
@@ -220,16 +355,11 @@
 .about-image-frame {
   position: relative;
   width: 100%;
-  max-width: 520px;
+  
   height: 520px;
   border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  background: rgba(7, 17, 31, 0.8);
-  box-shadow: 
-    0 20px 50px rgba(0, 0, 0, 0.6),
-    0 0 30px rgba(0, 212, 255, 0.2);
-  backdrop-filter: blur(20px);
+
+  
 }
 
 .about-building-img {
