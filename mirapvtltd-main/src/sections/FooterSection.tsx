@@ -3,6 +3,7 @@ import { motion, type Variants } from 'framer-motion'
 import { Send, ArrowUpRight } from 'lucide-react'
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6'
 import './FooterSection.css'
+import Myrapvtlogo from '../assets/image.png';
 import { footerLinks, socialLinks } from '../data/footer'
 
 const socialIconMap: Record<string, React.ComponentType<{ size?: number }>> = {
@@ -44,7 +45,9 @@ export function FooterSection() {
           {/* Brand Column */}
           <motion.div className="footer-brand-col" variants={fadeUp}>
             <div className="footer-brand-logo">
-              <div className="footer-brand-mark">MF</div>
+              <div className="footer-brand-mark">
+                <img src={Myrapvtlogo} alt="MAIRA Facilities Pvt. Ltd. Logo" className="footer-logo-image" />
+              </div>
               <div>
                 <strong className="footer-brand-name">MAIRA</strong>
                 <small className="footer-brand-tagline">Facilities Management</small>

@@ -24,9 +24,9 @@ export function HomePage() {
           <DarkHeroSection />
         </ErrorBoundary>
 
-        <ErrorBoundary fallbackName="About Section">
+        {/* <ErrorBoundary fallbackName="About Section">
           <OverviewSection />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
 
         <ErrorBoundary fallbackName="Services Section">
           <ServicesSection />
@@ -36,17 +36,17 @@ export function HomePage() {
           <WhyChooseUsSection />
         </ErrorBoundary>
 
-        <ErrorBoundary fallbackName="Statistics Section">
+        {/* <ErrorBoundary fallbackName="Statistics Section">
           <StatisticsSection />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
 
         <ErrorBoundary fallbackName="Clients Section">
           <ClientsSection />
         </ErrorBoundary>
 
-        <ErrorBoundary fallbackName="Testimonials Section">
+        {/* <ErrorBoundary fallbackName="Testimonials Section">
           <TestimonialsSection />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
 
         <ErrorBoundary fallbackName="Industries Section">
           <IndustriesSection />
@@ -60,9 +60,9 @@ export function HomePage() {
           <FeaturesSection />
         </ErrorBoundary>
 
-        <ErrorBoundary fallbackName="CTA Section">
+        {/* <ErrorBoundary fallbackName="CTA Section">
           <CtaSection />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
 
         {/* <ErrorBoundary fallbackName="Contact Section">
           <ContactSection />

@@ -5,6 +5,7 @@ import { FaLinkedinIn, FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/
 import './ContactSection.css'
 import { contactDetails } from '../data/siteContent'
 import Footer from './FooterSection'
+import Navbar from "../components/Navbar"
 
 type FormState = {
   name: string
@@ -93,9 +94,11 @@ export function ContactSection() {
 
   return (
     <>
+      <Navbar/>
     <section className="contact-section-container" id="contact">
+    
       <div className="contact-bg-glow" />
-
+  
       <div className="contact-shell">
         <div className="contact-header">
           <div className="contact-eyebrow">
@@ -127,7 +130,7 @@ export function ContactSection() {
               <ul className="contact-detail-list">
                 <li>
                   <div className="contact-detail-icon">
-                    <Mail size={18} />
+                    <Mail size={14} />
                   </div>
                   <div>
                     <span className="contact-detail-label">Email</span>
@@ -138,7 +141,7 @@ export function ContactSection() {
                 </li>
                 <li>
                   <div className="contact-detail-icon">
-                    <Phone size={18} />
+                    <Phone size={14} />
                   </div>
                   <div>
                     <span className="contact-detail-label">Phone</span>
@@ -149,7 +152,7 @@ export function ContactSection() {
                 </li>
                 <li>
                   <div className="contact-detail-icon">
-                    <MapPin size={18} />
+                    <MapPin size={14} />
                   </div>
                   <div>
                     <span className="contact-detail-label">Address</span>
@@ -159,9 +162,42 @@ export function ContactSection() {
               </ul>
             </div>
 
-            <div className="glass-contact-card">
+
+              <div className="glass-contact-card contact-map-card">
+  <h3 className="contact-card-heading">
+    <MapPin size={16} />
+    Our Location
+  </h3>
+
+  <div className="contact-map">
+    <iframe
+      title="MAIRA Facilities Office"
+      src="https://www.google.com/maps?q=Plot%20No%20MIG-178,%20Main%20Rd,%20behind%20Kendriya%20Vihar%20road,%20CG%20Employees%20Colony,%20Mayuri%20Nagar,%20Miyapur,%20Hyderabad,%20Telangana%20500049&output=embed"
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+    />
+  </div>
+
+  <p className="office-address">
+    Plot No : MIG-178, Main Rd, Behind Kendriya Vihar Road,
+    CG Employees Colony (Kendriya Vihar),
+    Mayuri Nagar, Miyapur,
+    Hyderabad, Telangana 500049
+  </p>
+
+  <a
+    className="direction-btn"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://maps.google.com/?q=Plot%20No%20MIG-178,%20Main%20Rd,%20behind%20Kendriya%20Vihar%20road,%20CG%20Employees%20Colony,%20Mayuri%20Nagar,%20Miyapur,%20Hyderabad,%20Telangana%20500049">
+    Get Directions
+  </a>
+</div>
+
+            {/* <div className="glass-contact-card">
               <h3 className="contact-card-heading">
-                <Clock size={16} />
+                <Clock size={13} />
                 Business Hours
               </h3>
               <ul className="hours-list">
@@ -172,9 +208,9 @@ export function ContactSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
 
-            <div className="glass-contact-card">
+            {/* <div className="glass-contact-card">
               <h3 className="contact-card-heading">Follow Us</h3>
               <div className="contact-socials-row">
                 {socialLinks.map(({ label, href, Icon }) => (
@@ -190,7 +226,7 @@ export function ContactSection() {
                   </a>
                 ))}
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right: Form */}
@@ -317,37 +353,7 @@ export function ContactSection() {
           </motion.div>
         </div>
 
-        <div className="glass-contact-card contact-map-card">
-  <h3 className="contact-card-heading">
-    <MapPin size={16} />
-    Our Location
-  </h3>
-
-  <div className="contact-map">
-    <iframe
-      title="MAIRA Facilities Office"
-      src="https://www.google.com/maps?q=Plot%20No%20MIG-178,%20Main%20Rd,%20behind%20Kendriya%20Vihar%20road,%20CG%20Employees%20Colony,%20Mayuri%20Nagar,%20Miyapur,%20Hyderabad,%20Telangana%20500049&output=embed"
-      loading="lazy"
-      allowFullScreen
-      referrerPolicy="no-referrer-when-downgrade"
-    />
-  </div>
-
-  <p className="office-address">
-    Plot No : MIG-178, Main Rd, Behind Kendriya Vihar Road,
-    CG Employees Colony (Kendriya Vihar),
-    Mayuri Nagar, Miyapur,
-    Hyderabad, Telangana 500049
-  </p>
-
-  <a
-    className="direction-btn"
-    target="_blank"
-    rel="noopener noreferrer"
-    href="https://maps.google.com/?q=Plot%20No%20MIG-178,%20Main%20Rd,%20behind%20Kendriya%20Vihar%20road,%20CG%20Employees%20Colony,%20Mayuri%20Nagar,%20Miyapur,%20Hyderabad,%20Telangana%20500049">
-    Get Directions
-  </a>
-</div>
+      
       </div>
 
       

@@ -8,7 +8,7 @@ import {
 import { useNavigate, useLocation } from 'react-router-dom'
 import './Hero.css'
 
-import heroVideo from '../assets/aivediolog.mp4'
+import heroVideo from '../assets/industrialanimation.mp4'
 import COmpalogog from '../assets/complogo.png'
 
 import {
@@ -21,6 +21,12 @@ import {
   ArrowRight,
   Sparkles,
   ChevronRight,
+  Zap,
+  Wind,
+  Droplets,
+  Flame,
+  Building2,
+  Settings,
 } from 'lucide-react'
 
 /* =========================================================
@@ -28,10 +34,6 @@ import {
 ========================================================= */
 
 const navItems = [
-  // {
-  //   path: '/',
-  //   label: 'Home',
-  // },
   {
     path: '/about',
     label: 'About',
@@ -54,6 +56,67 @@ const navItems = [
   },
 ]
 
+/* =========================================================
+   HERO SERVICE CARDS
+========================================================= */
+
+const heroServices = [
+  {
+    id: 'electrical',
+    title: 'Electrical',
+    subtitle: 'Power & Distribution',
+    description:
+      'Reliable electrical infrastructure and intelligent power distribution systems.',
+    icon: Zap,
+    number: '01',
+  },
+  {
+    id: 'hvac',
+    title: 'HVAC',
+    subtitle: 'Climate Control',
+    description:
+      'Advanced HVAC systems designed for comfort, efficiency and industrial performance.',
+    icon: Wind,
+    number: '02',
+  },
+  {
+    id: 'plumbing',
+    title: 'Plumbing',
+    subtitle: 'Utility Piping',
+    description:
+      'Complete plumbing and utility piping solutions for modern facilities.',
+    icon: Droplets,
+    number: '03',
+  },
+  {
+    id: 'fire-safety',
+    title: 'Fire & Safety',
+    subtitle: 'Protection Systems',
+    description:
+      'Integrated fire detection, suppression and life-safety engineering solutions.',
+    icon: Flame,
+    number: '04',
+  },
+  {
+    id: 'facility',
+    title: 'Facility Management',
+    subtitle: 'Operations & Maintenance',
+    description:
+      'End-to-end facility operations, maintenance and engineering support.',
+    icon: Building2,
+    number: '05',
+  },
+  {
+    id: 'mep',
+    title: 'MEP Engineering',
+    subtitle: 'Integrated Solutions',
+    description:
+      'Integrated mechanical, electrical and plumbing engineering for complex projects.',
+    icon: Settings,
+    number: '06',
+  },
+]
+
 export default function DarkHeroSection() {
 
   /* =======================================================
@@ -64,6 +127,11 @@ export default function DarkHeroSection() {
 
   const [activeSection, setActiveSection] = useState('home')
 
+  const [activeService, setActiveService] = useState(0)
+
+  const [isServiceHovered, setIsServiceHovered] =
+    useState(false)
+
   /* =======================================================
      ROUTER
   ======================================================= */
@@ -71,6 +139,28 @@ export default function DarkHeroSection() {
   const navigate = useNavigate()
 
   const location = useLocation()
+
+  /* =======================================================
+     SERVICE AUTO CAROUSEL
+  ======================================================= */
+
+  useEffect(() => {
+
+    if (isServiceHovered) {
+      return
+    }
+
+    const interval = setInterval(() => {
+
+      setActiveService((current) =>
+        (current + 1) % heroServices.length
+      )
+
+    }, 2800)
+
+    return () => clearInterval(interval)
+
+  }, [isServiceHovered])
 
   /* =======================================================
      MOUSE MOVEMENT PARALLAX
@@ -136,21 +226,9 @@ export default function DarkHeroSection() {
 
   /* =======================================================
      HOME SECTION OBSERVER
-     
-     IMPORTANT:
-     This is ONLY for sections that actually exist
-     inside the Home page.
   ======================================================= */
 
   useEffect(() => {
-
-    /*
-      Only observe sections that are actually part
-      of the Home page.
-
-      Do NOT include About / Services / Clients etc.
-      because those are now separate routes.
-    */
 
     if (location.pathname !== '/') {
       return
@@ -198,9 +276,7 @@ export default function DarkHeroSection() {
         },
         {
           root: null,
-
           threshold: 0.35,
-
           rootMargin:
             '-35% 0px -55% 0px',
         }
@@ -217,12 +293,7 @@ export default function DarkHeroSection() {
   }, [location.pathname])
 
   /* =======================================================
-     NAVBAR PAGE NAVIGATION
-     
-     This is the important change.
-     
-     Navbar items now navigate to actual React Router
-     pages instead of looking for IDs on the Home page.
+     NAVIGATION
   ======================================================= */
 
   const handleNavigation = (
@@ -233,11 +304,6 @@ export default function DarkHeroSection() {
     e.preventDefault()
 
     setMenuOpen(false)
-
-    /*
-      If already on the same page,
-      simply scroll to top.
-    */
 
     if (
       location.pathname === path
@@ -251,15 +317,7 @@ export default function DarkHeroSection() {
       return
     }
 
-    /*
-      Navigate to the separate page.
-    */
-
     navigate(path)
-
-    /*
-      Make sure new page starts from top.
-    */
 
     window.scrollTo({
       top: 0,
@@ -269,10 +327,6 @@ export default function DarkHeroSection() {
 
   /* =======================================================
      HOME SECTION SCROLL
-     
-     Used ONLY by buttons such as:
-     Explore Services
-     View Projects
   ======================================================= */
 
   const scrollToSection = (
@@ -283,11 +337,6 @@ export default function DarkHeroSection() {
     e.preventDefault()
 
     setMenuOpen(false)
-
-    /*
-      If the section exists on the current page,
-      scroll to it.
-    */
 
     const element =
       document.getElementById(id)
@@ -319,10 +368,6 @@ export default function DarkHeroSection() {
         behavior: 'smooth',
       })
 
-      /*
-        Update URL hash.
-      */
-
       window.history.pushState(
         null,
         '',
@@ -332,16 +377,36 @@ export default function DarkHeroSection() {
       return
     }
 
-    /*
-      If section doesn't exist on the current page,
-      navigate to Home first.
-
-      Example:
-      User is on /about and clicks a Home section.
-    */
-
     navigate(`/#${id}`)
   }
+
+  /* =======================================================
+     SERVICE CARD CLICK
+  ======================================================= */
+
+  const handleServiceClick = (
+    serviceId: string
+  ) => {
+
+    navigate(
+      `/services#${serviceId}`
+    )
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    })
+  }
+
+  /* =======================================================
+     ACTIVE SERVICE
+  ======================================================= */
+
+  const currentService =
+    heroServices[activeService]
+
+  const CurrentIcon =
+    currentService.icon
 
   /* =======================================================
      RETURN
@@ -436,6 +501,8 @@ export default function DarkHeroSection() {
               ease: 'easeInOut',
             }}
           />
+
+          <div className="hero-grid-glow" />
 
         </div>
 
@@ -756,8 +823,6 @@ export default function DarkHeroSection() {
               }}
             >
 
-              {/* Explore Services */}
-
               <a
                 className="primary"
 
@@ -782,8 +847,6 @@ export default function DarkHeroSection() {
 
               </a>
 
-              {/* View Projects */}
-
               <a
                 className="secondary"
 
@@ -804,6 +867,273 @@ export default function DarkHeroSection() {
               </a>
 
             </motion.div>
+
+          </motion.div>
+
+          {/* =================================================
+              RIGHT SERVICE CAROUSEL
+          ================================================= */}
+
+          <motion.div
+            className="hero-service-area"
+
+            initial={{
+              opacity: 0,
+              x: 50,
+            }}
+
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+
+            transition={{
+              duration: 0.8,
+              delay: 0.55,
+              ease: [
+                0.16,
+                1,
+                0.3,
+                1,
+              ],
+            }}
+
+            onMouseEnter={() =>
+              setIsServiceHovered(true)
+            }
+
+            onMouseLeave={() =>
+              setIsServiceHovered(false)
+            }
+          >
+
+            {/* =================================================
+                SMALL LABEL
+            ================================================= */}
+
+            <div className="service-carousel-label">
+
+              <span className="service-live-dot" />
+
+              <span>
+                OUR CORE SERVICES
+              </span>
+
+            </div>
+
+            {/* =================================================
+                MAIN SERVICE CARD
+            ================================================= */}
+
+            <motion.a
+              href="/services"
+              className="hero-service-card"
+
+              onClick={(e) =>
+                handleNavigation(
+                  e,
+                  '/services'
+                )
+              }
+
+              animate={{
+                y: [0, -5, 0],
+              }}
+
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            >
+
+              {/* CARD GLOW */}
+
+              <div className="service-card-glow" />
+
+              <div className="service-card-top">
+
+                <div className="service-icon-box">
+
+                  <motion.div
+                    key={currentService.id}
+
+                    initial={{
+                      scale: 0.5,
+                      rotate: -20,
+                      opacity: 0,
+                    }}
+
+                    animate={{
+                      scale: 1,
+                      rotate: 0,
+                      opacity: 1,
+                    }}
+
+                    transition={{
+                      duration: 0.45,
+                    }}
+                  >
+
+                    <CurrentIcon
+                      size={16}
+                      strokeWidth={1.7}
+                    />
+
+                  </motion.div>
+
+                </div>
+
+                <span className="service-number">
+                  {currentService.number}
+                </span>
+
+              </div>
+
+              {/* =================================================
+                  SERVICE TEXT
+              ================================================= */}
+
+              <motion.div
+                key={currentService.id}
+                className="service-card-content"
+
+                initial={{
+                  opacity: 0,
+                  y: 12,
+                }}
+
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+
+                transition={{
+                  duration: 0.45,
+                }}
+              >
+
+                <span className="service-subtitle">
+                  {currentService.subtitle}
+                </span>
+
+                <h2>
+                  {currentService.title}
+                </h2>
+
+                <p>
+                  {currentService.description}
+                </p>
+
+              </motion.div>
+
+              {/* =================================================
+                  CARD FOOTER
+              ================================================= */}
+
+              <div className="service-card-footer">
+
+                <span>
+                  Explore Service
+                </span>
+
+                <span className="service-arrow">
+                  <ArrowRight size={17} />
+                </span>
+
+              </div>
+
+            </motion.a>
+
+            {/* =================================================
+                CAROUSEL DOTS
+            ================================================= */}
+
+            <div className="service-carousel-dots">
+
+              {heroServices.map(
+                (service, index) => (
+
+                  <button
+                    key={service.id}
+
+                    className={
+                      index === activeService
+                        ? 'active'
+                        : ''
+                    }
+
+                    aria-label={`Show ${service.title}`}
+
+                    onClick={() =>
+                      setActiveService(
+                        index
+                      )
+                    }
+                  />
+
+                )
+              )}
+
+            </div>
+
+            {/* =================================================
+                MINI SERVICE CARDS
+            ================================================= */}
+
+            <div className="mini-service-list">
+
+              {heroServices
+                .filter(
+                  (_, index) =>
+                    index !==
+                    activeService
+                )
+                .slice(0, 3)
+                .map(
+                  (service) => {
+
+                    const Icon =
+                      service.icon
+
+                    const serviceIndex =
+                      heroServices.findIndex(
+                        (item) =>
+                          item.id ===
+                          service.id
+                      )
+
+                    return (
+
+                      <button
+                        key={service.id}
+                        className="mini-service-card"
+
+                        onClick={() =>
+                          setActiveService(
+                            serviceIndex
+                          )
+                        }
+                      >
+
+                        <span className="mini-icon">
+                          <Icon
+                            size={15}
+                          />
+                        </span>
+
+                        <span>
+                          {service.title}
+                        </span>
+
+                      </button>
+
+                    )
+
+                  }
+                )}
+
+            </div>
 
           </motion.div>
 
