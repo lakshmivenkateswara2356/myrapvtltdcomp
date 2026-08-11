@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   Building2,
   Target,
@@ -17,13 +17,17 @@ import Footer from "../sections/FooterSection"
 import HeroImage from "../assets/myraimg.png";
 import OfficeImage from "../assets/myrabuildingcompnya.png";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 50 },
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+
   whileInView: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: "easeOut",
     },
   },

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, type Variants } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, AlertCircle, MessageSquare } from 'lucide-react'
+import { Mail, Phone, MapPin,  Send, CheckCircle2, AlertCircle, MessageSquare } from 'lucide-react'
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6'
 import './ContactSection.css'
 import { contactDetails } from '../data/siteContent'
@@ -22,18 +22,18 @@ const fadeUp: Variants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' as const } },
 }
 
-const businessHours = [
-  { day: 'Monday – Friday', hours: '8:00 AM – 7:00 PM' },
-  { day: 'Saturday', hours: '9:00 AM – 4:00 PM' },
-  { day: 'Sunday', hours: 'Emergency Only' },
-]
+// const businessHours = [
+//   { day: 'Monday – Friday', hours: '8:00 AM – 7:00 PM' },
+//   { day: 'Saturday', hours: '9:00 AM – 4:00 PM' },
+//   { day: 'Sunday', hours: 'Emergency Only' },
+// ]
 
-const socialLinks = [
-  { label: 'LinkedIn', href: 'https://linkedin.com', Icon: FaLinkedinIn },
-  { label: 'Facebook', href: 'https://facebook.com', Icon: FaFacebookF },
-  { label: 'Instagram', href: 'https://instagram.com', Icon: FaInstagram },
-  { label: 'Twitter / X', href: 'https://twitter.com', Icon: FaXTwitter },
-]
+// const socialLinks = [
+//   { label: 'LinkedIn', href: 'https://linkedin.com', Icon: FaLinkedinIn },
+//   { label: 'Facebook', href: 'https://facebook.com', Icon: FaFacebookF },
+//   { label: 'Instagram', href: 'https://instagram.com', Icon: FaInstagram },
+//   { label: 'Twitter / X', href: 'https://twitter.com', Icon: FaXTwitter },
+// ]
 
 function validate(form: FormState): FormErrors {
   const errors: FormErrors = {}

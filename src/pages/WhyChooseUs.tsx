@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ShieldCheck,
   Award,
@@ -24,7 +24,7 @@ import Footer from "../sections/FooterSection";
    ANIMATION
 ========================================================= */
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 50,
@@ -33,9 +33,8 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: "easeOut",
     },
   },

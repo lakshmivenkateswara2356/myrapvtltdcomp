@@ -6,10 +6,10 @@ import { services } from '../data/siteContent'
 import { Sparkles } from 'lucide-react'
 
 
-import ElectricalImg from "../assets/electrical.png";
-import HVACImg from "../assets/HOAC.png";
-import FacilityImg from "../assets/Firesafty.png";
-import EngineeringImg from "../assets/Plumbingand.png";
+// import ElectricalImg from "../assets/electrical.png";
+// import HVACImg from "../assets/HOAC.png";
+// import FacilityImg from "../assets/Firesafty.png";
+// import EngineeringImg from "../assets/Plumbingand.png";
 
 export function ServicesSection() {
   const sectionRef = useRef<HTMLDivElement>(null)
