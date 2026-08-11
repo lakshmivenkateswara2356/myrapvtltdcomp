@@ -125,7 +125,7 @@ export default function DarkHeroSection() {
 
   const [menuOpen, setMenuOpen] = useState(false)
 
-  const [activeSection, setActiveSection] = useState('home')
+  const [, setActiveSection] = useState('home')
 
   const [activeService, setActiveService] = useState(0)
 
@@ -329,74 +329,74 @@ export default function DarkHeroSection() {
      HOME SECTION SCROLL
   ======================================================= */
 
-  const scrollToSection = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: string
-  ) => {
+  // const scrollToSection = (
+  //   e: React.MouseEvent<HTMLAnchorElement>,
+  //   id: string
+  // ) => {
 
-    e.preventDefault()
+  //   e.preventDefault()
 
-    setMenuOpen(false)
+  //   setMenuOpen(false)
 
-    const element =
-      document.getElementById(id)
+  //   const element =
+  //     document.getElementById(id)
 
-    if (element) {
+  //   if (element) {
 
-      const offset = 80
+  //     const offset = 80
 
-      const bodyRect =
-        document.body
-          .getBoundingClientRect()
-          .top
+  //     const bodyRect =
+  //       document.body
+  //         .getBoundingClientRect()
+  //         .top
 
-      const elementRect =
-        element
-          .getBoundingClientRect()
-          .top
+  //     const elementRect =
+  //       element
+  //         .getBoundingClientRect()
+  //         .top
 
-      const elementPosition =
-        elementRect -
-        bodyRect
+  //     const elementPosition =
+  //       elementRect -
+  //       bodyRect
 
-      const offsetPosition =
-        elementPosition -
-        offset
+  //     const offsetPosition =
+  //       elementPosition -
+  //       offset
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      })
+  //     window.scrollTo({
+  //       top: offsetPosition,
+  //       behavior: 'smooth',
+  //     })
 
-      window.history.pushState(
-        null,
-        '',
-        `#${id}`
-      )
+  //     window.history.pushState(
+  //       null,
+  //       '',
+  //       `#${id}`
+  //     )
 
-      return
-    }
+  //     return
+  //   }
 
-    navigate(`/#${id}`)
-  }
+  //   navigate(`/#${id}`)
+  // }
 
   /* =======================================================
      SERVICE CARD CLICK
   ======================================================= */
 
-  const handleServiceClick = (
-    serviceId: string
-  ) => {
+  // const handleServiceClick = (
+  //   serviceId: string
+  // ) => {
 
-    navigate(
-      `/services#${serviceId}`
-    )
+  //   navigate(
+  //     `/services#${serviceId}`
+  //   )
 
-    window.scrollTo({
-      top: 0,
-      behavior: 'auto',
-    })
-  }
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'auto',
+  //   })
+  // }
 
   /* =======================================================
      ACTIVE SERVICE

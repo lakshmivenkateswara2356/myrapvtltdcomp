@@ -43,7 +43,7 @@ export function ServicesSection() {
     }
   }, [])
 
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleSmoothScroll = (e: React.MouseEvent) => {
     e.preventDefault()
     const element = document.getElementById('contact')
     if (element) {

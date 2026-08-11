@@ -1,6 +1,6 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { motion, type Variants } from 'framer-motion'
-import { Send, ArrowUpRight } from 'lucide-react'
+import {  ArrowUpRight } from 'lucide-react'
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6'
 import './FooterSection.css'
 import Myrapvtlogo from '../assets/image.png';
@@ -19,15 +19,15 @@ const fadeUp: Variants = {
 }
 
 export function FooterSection() {
-  const [email, setEmail] = useState('')
-  const [subscribed, setSubscribed] = useState(false)
+  // const [email, setEmail] = useState('')
+  // const [, setSubscribed] = useState(false)
 
-  function handleSubscribe(e: React.FormEvent) {
-    e.preventDefault()
-    if (!email.includes('@')) return
-    setSubscribed(true)
-    setEmail('')
-  }
+  // function handleSubscribe(e: React.FormEvent) {
+  //   e.preventDefault()
+  //   if (!email.includes('@')) return
+  //   setSubscribed(true)
+  //   setEmail('')
+  // }
 
   return (
     <footer className="footer-section-container" id="footer">

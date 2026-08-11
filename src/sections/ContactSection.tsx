@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, type Variants } from 'framer-motion'
 import { Mail, Phone, MapPin,  Send, CheckCircle2, AlertCircle, MessageSquare } from 'lucide-react'
-import { FaLinkedinIn, FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6'
+// import { FaLinkedinIn, FaFacebookF, FaInstagram, FaXTwitter } from 'react-icons/fa6'
 import './ContactSection.css'
 import { contactDetails } from '../data/siteContent'
 import Footer from './FooterSection'
