@@ -1,0 +1,1325 @@
+/* =========================================================
+   CLIENTS PAGE
+   ALL CLASSES ARE SCOPED TO CLIENTS
+   ========================================================= */
+
+.clients-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #050b17;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.clients-hero {
+  position: relative;
+  min-height: 52vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 120px 8% 10px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(0, 194, 255, 0.13),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(124, 58, 237, 0.14),
+      transparent 35%
+    ),
+    #050b17;
+}
+
+
+/* Decorative glow */
+
+.clients-hero-glow {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+.clients-hero-glow-one {
+  top: -220px;
+  left: -120px;
+
+  background: rgba(0, 194, 255, 0.18);
+}
+
+.clients-hero-glow-two {
+  right: -160px;
+  bottom: -250px;
+
+  background: rgba(124, 58, 237, 0.2);
+}
+
+
+/* Hero content */
+
+.clients-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: 950px;
+
+  text-align: center;
+}
+
+.clients-hero-tag {
+  display: inline-flex;
+
+  padding: 9px 22px;
+
+  border-radius: 50px;
+
+  border: 1px solid rgba(0, 212, 255, 0.3);
+
+  background: rgba(0, 212, 255, 0.08);
+
+  color: #00d4ff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 25px;
+}
+
+.clients-hero-content h1 {
+  margin: 0;
+
+  font-size: clamp(35px, 7vw, 76px);
+
+  line-height: 1.05;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+
+  color: #ffffff;
+}
+
+.clients-hero-content h1 span {
+  display: inline-block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00a8ff,
+      #00d4ff,
+      #5cffb1
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.clients-hero-content p {
+  max-width: 720px;
+
+  margin: 30px auto 0;
+
+  color: #b9c7d8;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.clients-intro {
+  position: relative;
+
+  padding: 10px 2% 20px;
+
+  text-align: center;
+
+  background: #07111f;
+}
+
+.clients-intro-content {
+  max-width: 900px;
+
+  margin: auto;
+}
+
+.clients-section-tag {
+  display: inline-block;
+
+  color: #35d8ff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.clients-intro-content h2 {
+  margin: 20px 0;
+
+  font-size: clamp(32px, 4vw, 52px);
+
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -1.5px;
+}
+
+.clients-intro-content p {
+  max-width: 780px;
+
+  margin: auto;
+
+  color: #aebdcd;
+
+  font-size: 16px;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   CLIENT LIST
+   ========================================================= */
+
+.clients-list-section {
+  position: relative;
+
+  padding: 10px 8% 10px;
+
+  background: #07111f;
+}
+
+.clients-section-heading {
+  max-width: 850px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+.clients-section-heading span {
+  color: #36d8ff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.clients-section-heading h2 {
+  margin: 15px 0;
+
+  font-size: clamp(32px, 4vw, 52px);
+
+  line-height: 1.2;
+}
+
+.clients-section-heading p {
+  max-width: 650px;
+
+  margin: auto;
+
+  color: #aebdcd;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CLIENT GRID
+   ========================================================= */
+
+.clients-grid {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 28px;
+}
+
+
+/* =========================================================
+   CLIENT CARD
+   ========================================================= */
+
+.client-card {
+  position: relative;
+
+  min-height: 430px;
+  align-items: center;
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  backdrop-filter: blur(20px);
+
+  -webkit-backdrop-filter: blur(20px);
+
+  transition:
+    transform 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-12px);
+
+  border-color:
+    rgba(0, 212, 255, 0.55);
+
+  box-shadow:
+    0 25px 70px
+    rgba(0, 170, 255, 0.14);
+}
+
+
+/* =========================================================
+   LOGO AREA
+   ========================================================= */
+
+.client-logo-area {
+  height: 200px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(0, 194, 255, 0.08),
+      transparent 65%
+    );
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+
+/* Temporary text logos */
+
+.client-logo {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  min-width: 180px;
+
+  min-height: 90px;
+}
+
+.client-logo strong {
+  font-size: 32px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  color: #ffffff;
+}
+
+.client-logo small {
+  margin-top: 8px;
+
+  color: #00d4ff;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* Individual logo styling */
+
+.client-logo-1 strong {
+  font-style: italic;
+
+  letter-spacing: -1px;
+}
+
+.client-logo-2 strong {
+  font-size: 28px;
+}
+
+.client-logo-3 strong {
+  font-size: 48px;
+
+  color: #ffffff;
+}
+
+.client-logo-4 strong {
+  color: #178cff;
+
+  font-size: 30px;
+}
+
+.client-logo-5 strong {
+  font-size: 34px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CLIENT CARD CONTENT
+   ========================================================= */
+
+.client-card-content {
+  display: flex;
+
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 30px;
+}
+
+.client-category {
+  color: #35d8ff;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 12px;
+}
+
+.client-card-content h3 {
+  margin: 0 0 12px;
+
+  font-size: 23px;
+
+  font-weight: 700;
+}
+
+.client-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin: 0 0 15px;
+
+  color: #c2cfdd;
+
+  font-size: 13px;
+}
+
+.client-location svg {
+  color: #00d4ff;
+}
+
+.client-description {
+  margin: 0;
+
+  color: #9faebe;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   PROJECT STATUS
+   ========================================================= */
+
+.client-project-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: auto;
+
+  padding-top: 25px;
+
+  color: #c9d6e3;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.client-project-status svg {
+  color: #35d8ff;
+}
+
+
+/* Bottom animated line */
+
+.client-card-line {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00a8ff,
+      #00d4ff,
+      #6c6bff
+    );
+
+  transition: width 0.45s ease;
+}
+
+.client-card:hover .client-card-line {
+  width: 100%;
+}
+
+
+/* =========================================================
+   INDUSTRIES
+   ========================================================= */
+
+.client-industries-section {
+  position: relative;
+
+  padding: 10px 8%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #07111f,
+      #050b17
+    );
+}
+
+.client-image {
+  height: 60px;
+  align-items: center;
+  text-align: center;
+}
+
+.client-industry-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+.client-industry-card {
+  padding: 40px 30px;
+
+  min-height: 240px;
+
+  border-radius: 24px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    background 0.4s ease;
+}
+
+.client-industry-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(0, 212, 255, 0.45);
+
+  background:
+    rgba(0, 194, 255, 0.06);
+}
+
+.client-industry-card svg {
+  color: #35d8ff;
+
+  margin-bottom: 25px;
+}
+
+.client-industry-card h3 {
+  margin: 0 0 12px;
+
+  font-size: 19px;
+}
+
+.client-industry-card p {
+  margin: 0;
+
+  color: #9eafc0;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.clients-cta-section {
+  padding: 110px 8% 140px;
+
+  background: #050b17;
+}
+
+.clients-cta-card {
+  position: relative;
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  overflow: hidden;
+
+  border-radius: 35px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  background:
+    linear-gradient(
+      135deg,
+      #0c1d34,
+      #102b4e,
+      #172f62
+    );
+}
+
+.clients-cta-glow {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  top: -250px;
+  right: -120px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 194, 255, 0.18);
+
+  filter: blur(80px);
+}
+
+.clients-cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 90px 40px;
+
+  text-align: center;
+}
+
+.clients-cta-content > span {
+  color: #35d8ff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.clients-cta-content h2 {
+  margin: 18px 0;
+
+  font-size: clamp(35px, 5vw, 60px);
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+}
+
+.clients-cta-content p {
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  color: #b7c7d8;
+
+  line-height: 1.8;
+
+  font-size: 16px;
+}
+
+
+/* CTA button */
+
+.clients-cta-buttons {
+  margin-top: 35px;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   CLIENT AUTO CAROUSEL
+========================================================= */
+
+.clients-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 30px;
+  padding: 1px 0 10px;
+}
+
+/* LEFT / RIGHT FADE */
+
+.clients-carousel-wrapper::before,
+.clients-carousel-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.clients-carousel-wrapper::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #05070b,
+    transparent
+  );
+}
+
+.clients-carousel-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #05070b,
+    transparent
+  );
+}
+
+/* TRACK */
+
+.clients-carousel-track {
+  display: flex;
+  width: max-content;
+  gap: 18px;
+  padding-left: 18px;
+  will-change: transform;
+}
+
+/* SMALL CARD */
+
+.clients-carousel-track .client-card {
+  flex: 0 0 270px;
+  width: 270px;
+  min-height: 245px;
+
+  position: relative;
+
+  padding: 9px;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.09),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  box-shadow:
+    0 15px 45px
+    rgba(0, 0, 0, 0.25);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  transition: all 0.35s ease;
+}
+
+.clients-carousel-track .client-card:hover {
+  transform: translateY(-7px);
+
+  border-color:
+    rgba(70, 200, 255, 0.5);
+
+  box-shadow:
+    0 20px 55px
+    rgba(0, 0, 0, 0.35),
+    0 0 30px
+    rgba(70, 200, 255, 0.12);
+}
+
+/* LOGO AREA */
+
+.clients-carousel-track .client-logo-area {
+  height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 12px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(60, 200, 255, 0.1),
+      rgba(255, 255, 255, 0.025) 60%,
+      transparent
+    );
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+/* LOGO */
+
+.clients-carousel-track .client-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.clients-carousel-track .client-logo strong {
+  color: #fff;
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  letter-spacing: 1px;
+}
+
+.clients-carousel-track .client-logo small {
+  margin-top: 5px;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+/* CATEGORY */
+
+.clients-carousel-track .client-category {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color:
+    rgba(75, 205, 255, 0.85);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+/* CLIENT NAME */
+
+.clients-carousel-track .client-card-content h3 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 17px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+/* LOCATION */
+
+.clients-carousel-track .client-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin: 7px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 9px;
+}
+
+/* DESCRIPTION */
+
+.clients-carousel-track .client-description {
+  margin: 9px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 10px;
+
+  line-height: 1.55;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* PROJECT STATUS */
+
+.clients-carousel-track .client-project-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-top: 13px;
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+.clients-carousel-track
+.client-project-status svg {
+  color: #5ee7a0;
+}
+
+/* BOTTOM LINE */
+
+.clients-carousel-track .client-card-line {
+  position: absolute;
+
+  left: 18px;
+  right: 18px;
+
+  bottom: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(70, 205, 255, 0.8),
+      transparent
+    );
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+
+  .clients-carousel-track {
+    gap: 14px;
+  }
+
+  .clients-carousel-track .client-card {
+    flex: 0 0 245px;
+    width: 245px;
+    min-height: 235px;
+  }
+
+  .clients-carousel-wrapper::before,
+  .clients-carousel-wrapper::after {
+    width: 70px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .clients-carousel-wrapper {
+    margin-top: 35px;
+  }
+
+  .clients-carousel-track {
+    gap: 12px;
+    padding-left: 12px;
+  }
+
+  .clients-carousel-track .client-card {
+    flex: 0 0 220px;
+    width: 220px;
+    min-height: 220px;
+
+    padding: 14px;
+
+    border-radius: 15px;
+  }
+
+  .clients-carousel-track .client-logo-area {
+    height: 65px;
+  }
+
+  .clients-carousel-track .client-logo strong {
+    font-size: 16px;
+  }
+
+  .clients-carousel-track
+  .client-card-content h3 {
+    font-size: 15px;
+  }
+
+  .clients-carousel-track
+  .client-description {
+    font-size: 9px;
+  }
+
+  .clients-carousel-wrapper::before,
+  .clients-carousel-wrapper::after {
+    width: 35px;
+  }
+}
+
+.clients-primary-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 15px 30px;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0094ff,
+      #00d8ff
+    );
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  box-shadow:
+    0 12px 35px
+    rgba(0, 148, 255, 0.3);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.clients-primary-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 45px
+    rgba(0, 216, 255, 0.45);
+}
+
+
+/* Contact information */
+
+.clients-contact-info {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 35px;
+
+  margin-top: 45px;
+}
+
+.clients-contact-info div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #d7e1ec;
+
+  font-size: 14px;
+}
+
+.clients-contact-info svg {
+  color: #35d8ff;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .clients-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .client-industry-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .clients-hero {
+    min-height: 55vh;
+
+    padding:
+      100px
+      20px
+      80px;
+  }
+
+  .clients-hero-content h1 {
+    letter-spacing: -1px;
+  }
+
+  .clients-hero-content p {
+    font-size: 14px;
+  }
+
+  .clients-intro {
+    padding:
+      80px
+      20px
+      50px;
+  }
+
+  .clients-list-section {
+    padding:
+      60px
+      20px
+      90px;
+  }
+
+  .clients-grid {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+  .client-card {
+    min-height: 410px;
+  }
+
+  .client-industry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-industries-section {
+    padding:
+      80px
+      20px;
+  }
+
+  .clients-cta-section {
+    padding:
+      70px
+      20px
+      90px;
+  }
+
+  .clients-cta-content {
+    padding:
+      70px
+      25px;
+  }
+
+  .clients-contact-info {
+    flex-direction: column;
+
+    gap: 18px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .clients-hero {
+    padding:
+      90px
+      18px
+      70px;
+  }
+
+  .clients-hero-tag {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .clients-hero-content h1 {
+    font-size: 40px;
+  }
+
+  .clients-hero-content p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .client-logo strong {
+    font-size: 26px;
+  }
+
+  .client-logo-3 strong {
+    font-size: 42px;
+  }
+
+  .client-card-content {
+    padding: 25px;
+  }
+
+  .client-industry-card {
+    min-height: auto;
+
+    padding: 30px 25px;
+  }
+
+  .clients-cta-content {
+    padding:
+      60px
+      20px;
+  }
+
+  .clients-cta-content h2 {
+    font-size: 34px;
+  }
+}
