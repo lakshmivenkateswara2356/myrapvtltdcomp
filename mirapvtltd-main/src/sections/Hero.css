@@ -1,10 +1,12 @@
 /* ==========================================================================
-   PREMIUM DARK HERO SECTION STYLES WITH CUTOUT MASK & BUILDING VISUAL
+   PREMIUM DARK HERO SECTION
    ========================================================================== */
 
 .hero {
+  position: relative;
   min-height: 100vh;
-  background: #050B17;
+  width: 100%;
+  background: #050b17;
   padding: 20px 11px;
   display: flex;
   align-items: center;
@@ -13,10 +15,13 @@
   overflow: hidden;
 }
 
+/* ==========================================================================
+   ENGINEERING GLASS CONTENT
+   ========================================================================== */
+
 .engineeringconten {
   position: relative;
   z-index: 2;
- 
 
   width: fit-content;
   max-width: 650px;
@@ -25,117 +30,351 @@
 
   border-radius: 32px;
 
-  /* Glass Background */
   background: rgba(8, 19, 33, 0.35);
 
-  /* Frosted Blur */
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(22px);
 
-  /* Glossy Border */
   border: 1px solid rgba(255, 255, 255, 0.12);
 
-  /* Premium Shadow */
   box-shadow:
     0 25px 60px rgba(0, 0, 0, 0.45),
-    inset 0 1px 1px rgba(255,255,255,0.18),
-    inset 0 -1px 1px rgba(255,255,255,0.05);
+    inset 0 1px 1px rgba(255, 255, 255, 0.18),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.05);
 
   overflow: hidden;
 }
 
+/* ==========================================================================
+   LOGO
+   ========================================================================== */
 
 .company-logo {
   width: auto;
   height: 32px;
+  max-width: 180px;
   object-fit: contain;
 }
 
-/* Masked Hero Card Shell with curved top-left and curved bottom-right cuts */
+/* ==========================================================================
+   HERO CARD
+   ========================================================================== */
+
 .hero-card {
   position: relative;
+
   width: 100%;
   max-width: 1600px;
+
   height: 900px;
+
   overflow: hidden;
+
   margin-top: -30px;
+
   background: #08111f;
 
-  -webkit-mask: url("../assets/hero-mask.svg") center/100% 100% no-repeat;
-  mask: url("../assets/hero-mask.svg") center/100% 100% no-repeat;
+  -webkit-mask: url("../assets/hero-mask.svg") center / 100% 100% no-repeat;
+  mask: url("../assets/hero-mask.svg") center / 100% 100% no-repeat;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  box-sizing: border-box;
 }
 
-/* Glowing Particle Orbs */
+/* ==========================================================================
+   BACKGROUND LIGHTS
+   ========================================================================== */
+
 .hero-bg-lights {
   position: absolute;
   inset: 0;
+
   pointer-events: none;
+
   z-index: 1;
 }
 
 .glow-orb {
   position: absolute;
+
   border-radius: 50%;
+
   filter: blur(120px);
+
+  pointer-events: none;
 }
 
 .orb-1 {
   top: -10%;
   left: 25%;
+
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, rgba(0, 212, 255, 0) 70%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 212, 255, 0.3) 0%,
+      rgba(0, 212, 255, 0) 70%
+    );
 }
 
 .orb-2 {
   bottom: -15%;
   right: 15%;
+
   width: 550px;
   height: 550px;
-  background: radial-gradient(circle, rgba(124, 58, 237, 0.35) 0%, rgba(124, 58, 237, 0) 70%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(124, 58, 237, 0.35) 0%,
+      rgba(124, 58, 237, 0) 70%
+    );
 }
 
-/* Background Video */
+/* ==========================================================================
+   BACKGROUND VIDEO
+   ========================================================================== */
+
 .hero-video {
   position: absolute;
+
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
+
   z-index: 0;
+
   opacity: 0.85;
+
+  pointer-events: none;
 }
 
-/* Dark Gradient Overlay */
+/* ==========================================================================
+   VIDEO OVERLAY
+   ========================================================================== */
+
 .hero-overlay {
   position: absolute;
-  inset:60;
-  background: linear-gradient(
-    90deg,
-    rgba(7, 18, 32, 0.88) 0%,
-    rgba(7, 18, 32, 0.72) 45%,
-    rgba(7, 18, 32, 0.4) 75%,
-    rgba(7, 18, 32, 0.15) 100%
-  );
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 18, 32, 0.88) 0%,
+      rgba(7, 18, 32, 0.72) 45%,
+      rgba(7, 18, 32, 0.4) 75%,
+      rgba(7, 18, 32, 0.15) 100%
+    );
+
   z-index: 2;
+
+  pointer-events: none;
 }
 
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
 
+.hero-navbar {
+  position: relative;
 
-/* =========================================================
-   HERO SERVICE CAROUSEL
-========================================================= */
+  z-index: 20;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 35px 55px;
+
+  box-sizing: border-box;
+}
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 40px;
+
+  margin-left: auto;
+  margin-right: 35px;
+}
+
+.nav-links a {
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  white-space: nowrap;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #00c2ff;
+}
+
+/* ==========================================================================
+   CONTACT BUTTON
+   ========================================================================== */
+
+.contact-btn {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  flex-shrink: 0;
+
+  height: 42px;
+
+  padding: 0 28px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  overflow: hidden;
+
+  z-index: 1;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.contact-btn::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -2px;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #ec4899,
+      #8b5cf6,
+      #06b6d4,
+      #7c3aed
+    );
+
+  background-size: 300% 300%;
+
+  animation: borderMove 6s linear infinite;
+
+  z-index: -2;
+}
+
+.contact-btn::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 2px;
+
+  border-radius: inherit;
+
+  background: rgba(12, 18, 34, 0.78);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  z-index: -1;
+}
+
+.contact-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 0 18px rgba(236, 72, 153, 0.35),
+    0 0 35px rgba(124, 58, 237, 0.25);
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================================================================
+   HERO BODY
+   ========================================================================== */
 
 .hero-body-grid {
   position: relative;
-  z-index: 5;
+
+  z-index: 10;
 
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(350px, 0.65fr);
+
+  grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(350px, 0.65fr);
 
   align-items: center;
 
@@ -143,57 +382,317 @@
 
   width: 100%;
 
-  min-height: 100%;
+  min-height: 480px;
 
-  padding: 125px 75px 150px;
+  padding: 0 75px;
+
+  box-sizing: border-box;
 }
 
+/* ==========================================================================
+   HERO CONTENT
+   ========================================================================== */
 
-/* =========================================================
+.hero-content {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 680px;
+
+  margin-left: 20px;
+
+  margin-top: 10px;
+
+  min-width: 0;
+}
+
+/* ==========================================================================
+   BADGE
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 20px;
+
+  border-radius: 40px;
+
+  background: rgba(0, 212, 255, 0.1);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  color: #00d4ff;
+
+  letter-spacing: 1.2px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(0, 212, 255, 0.3);
+
+  white-space: nowrap;
+}
+
+.badge-dot {
+  width: 7px;
+
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #00d4ff;
+
+  box-shadow: 0 0 10px #00d4ff;
+}
+
+/* ==========================================================================
+   HERO HEADING
+   ========================================================================== */
+
+.hero-content h1 {
+  font-size: 68px;
+
+  line-height: 1.05;
+
+  color: #ffffff;
+
+  font-weight: 800;
+
+  margin-top: 0;
+
+  margin-bottom: 24px;
+
+  letter-spacing: -1px;
+}
+
+.hero-gradient-text {
+  background:
+    linear-gradient(
+      90deg,
+      #00a8ff 0%,
+      #00d4ff 50%,
+      #5cffb1 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+}
+
+/* ==========================================================================
+   PARAGRAPH
+   ========================================================================== */
+
+.paragraphs {
+  width: 560px;
+
+  max-width: 100%;
+
+  font-size: 14px;
+
+  color: #e2e8f0;
+
+  line-height: 1.5;
+
+  margin-top: 0;
+
+  margin-bottom: 36px;
+}
+
+/* ==========================================================================
+   HERO BUTTONS
+   ========================================================================== */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 36px;
+
+  margin-top: 10px;
+
+  flex-wrap: wrap;
+}
+
+.primary {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  height: 48px;
+
+  padding: 0 36px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0094ff,
+      #00d8ff
+    );
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(0, 148, 255, 0.4);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 216, 255, 0.55);
+}
+
+.primary .btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.primary:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+.secondary {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  height: 48px;
+
+  padding: 0 36px;
+
+  border-radius: 50px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.25);
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.secondary:hover {
+  background:
+    rgba(255, 255, 255, 0.18);
+
+  border-color:
+    rgba(255, 255, 255, 0.45);
+
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
    SERVICE AREA
-========================================================= */
+   ========================================================================== */
 
 .hero-service-area {
   position: relative;
 
   width: 100%;
+
   max-width: 470px;
 
   margin-left: auto;
 
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
 
   z-index: 10;
+
+  min-width: 0;
 }
 
-
-/* =========================================================
+/* ==========================================================================
    SERVICE LABEL
-========================================================= */
+   ========================================================================== */
 
 .service-carousel-label {
   display: flex;
+
   align-items: center;
+
   gap: 9px;
 
   margin-bottom: 14px;
 
   font-size: 10px;
+
   font-weight: 700;
 
   letter-spacing: 2.5px;
 
-  color: rgba(255, 255, 255, 0.65);
+  color:
+    rgba(255, 255, 255, 0.65);
 
   text-transform: uppercase;
 }
 
-
 .service-live-dot {
   width: 7px;
+
   height: 7px;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
@@ -203,12 +702,11 @@
     0 0 8px rgba(255, 255, 255, 0.9),
     0 0 18px rgba(79, 195, 255, 0.8);
 
-  animation: serviceLivePulse 1.7s infinite;
+  animation:
+    serviceLivePulse 1.7s infinite;
 }
 
-
 @keyframes serviceLivePulse {
-
   0% {
     opacity: 0.45;
     transform: scale(0.85);
@@ -223,13 +721,11 @@
     opacity: 0.45;
     transform: scale(0.85);
   }
-
 }
 
-
-/* =========================================================
+/* ==========================================================================
    MAIN SERVICE CARD
-========================================================= */
+   ========================================================================== */
 
 .hero-service-card {
   position: relative;
@@ -237,10 +733,12 @@
   display: block;
 
   width: 100%;
+
   height: 205px;
-  
 
   padding: 11px;
+
+  box-sizing: border-box;
 
   overflow: hidden;
 
@@ -257,7 +755,8 @@
       rgba(255, 255, 255, 0.035)
     );
 
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border:
+    1px solid rgba(255, 255, 255, 0.18);
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -272,9 +771,7 @@
     box-shadow 0.45s ease;
 }
 
-
 .hero-service-card:hover {
-
   transform:
     translateY(-8px)
     scale(1.015);
@@ -288,18 +785,19 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-
-/* =========================================================
+/* ==========================================================================
    SERVICE CARD GLOW
-========================================================= */
+   ========================================================================== */
 
 .service-card-glow {
   position: absolute;
 
   width: 240px;
+
   height: 240px;
 
   top: -100px;
+
   right: -80px;
 
   border-radius: 50%;
@@ -320,9 +818,7 @@
     serviceGlowMove 6s ease-in-out infinite;
 }
 
-
 @keyframes serviceGlowMove {
-
   0% {
     transform:
       translate3d(0, 0, 0)
@@ -340,13 +836,11 @@
       translate3d(0, 0, 0)
       scale(1);
   }
-
 }
 
-
-/* =========================================================
+/* ==========================================================================
    CARD TOP
-========================================================= */
+   ========================================================================== */
 
 .service-card-top {
   position: relative;
@@ -360,16 +854,18 @@
   z-index: 2;
 }
 
-
 .service-icon-box {
-
   width: 38px;
+
   height: 38px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  flex-shrink: 0;
 
   border-radius: 19px;
 
@@ -383,17 +879,14 @@
     );
 
   border:
-    1px solid
-    rgba(117, 220, 255, 0.3);
+    1px solid rgba(117, 220, 255, 0.3);
 
   box-shadow:
     0 0 30px rgba(63, 193, 255, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-
 .service-number {
-
   font-size: 11px;
 
   font-weight: 700;
@@ -404,23 +897,21 @@
     rgba(255, 255, 255, 0.35);
 }
 
-
-/* =========================================================
+/* ==========================================================================
    SERVICE CONTENT
-========================================================= */
+   ========================================================================== */
 
 .service-card-content {
-
   position: relative;
 
   z-index: 2;
 
   margin-top: 2px;
+
+  min-width: 0;
 }
 
-
 .service-subtitle {
-
   display: block;
 
   margin-bottom: 3px;
@@ -437,18 +928,14 @@
     rgba(113, 211, 255, 0.9);
 }
 
-
 .service-card-content h2 {
-
-  /* margin: 0; */
+  margin: 0;
 
   font-size: 19px;
 
-  /* line-height: 1.05; */
+  line-height: 1.15;
 
   font-weight: 700;
-
-  /* letter-spacing: -1.2px; */
 
   color: #ffffff;
 
@@ -456,33 +943,30 @@
     0 0 25px rgba(255, 255, 255, 0.08);
 }
 
-
 .service-card-content p {
-
   max-width: 360px;
 
-  margin:
-    5px 0 0;
+  margin: 5px 0 0;
 
   font-size: 12px;
 
-  /* line-height: 1.7; */
+  line-height: 1.5;
 
   color:
     rgba(255, 255, 255, 0.58);
 }
 
-
-/* =========================================================
+/* ==========================================================================
    SERVICE FOOTER
-========================================================= */
+   ========================================================================== */
 
 .service-card-footer {
-
   position: absolute;
 
   left: 27px;
+
   right: 27px;
+
   bottom: 3px;
 
   z-index: 3;
@@ -496,8 +980,7 @@
   padding-top: 7px;
 
   border-top:
-    1px solid
-    rgba(255, 255, 255, 0.1);
+    1px solid rgba(255, 255, 255, 0.1);
 
   font-size: 11px;
 
@@ -511,16 +994,18 @@
     rgba(255, 255, 255, 0.68);
 }
 
-
 .service-arrow {
-
   width: 23px;
+
   height: 23px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
@@ -530,32 +1015,25 @@
     rgba(255, 255, 255, 0.1);
 
   border:
-    1px solid
-    rgba(255, 255, 255, 0.15);
+    1px solid rgba(255, 255, 255, 0.15);
 
   transition:
     transform 0.3s ease,
     background 0.3s ease;
 }
 
-
-.hero-service-card:hover
-.service-arrow {
-
-  transform:
-    translateX(5px);
+.hero-service-card:hover .service-arrow {
+  transform: translateX(5px);
 
   background:
     rgba(75, 198, 255, 0.2);
 }
 
-
-/* =========================================================
+/* ==========================================================================
    CAROUSEL DOTS
-========================================================= */
+   ========================================================================== */
 
 .service-carousel-dots {
-
   display: flex;
 
   align-items: center;
@@ -567,10 +1045,9 @@
   margin-top: 17px;
 }
 
-
 .service-carousel-dots button {
-
   width: 6px;
+
   height: 6px;
 
   padding: 0;
@@ -590,26 +1067,21 @@
     box-shadow 0.3s ease;
 }
 
-
 .service-carousel-dots button.active {
-
   width: 24px;
 
   background:
     rgba(116, 214, 255, 0.95);
 
   box-shadow:
-    0 0 12px
-    rgba(80, 200, 255, 0.65);
+    0 0 12px rgba(80, 200, 255, 0.65);
 }
 
-
-/* =========================================================
+/* ==========================================================================
    MINI SERVICE CARDS
-========================================================= */
+   ========================================================================== */
 
 .mini-service-list {
-
   width: 100%;
 
   display: grid;
@@ -622,9 +1094,7 @@
   margin-top: 14px;
 }
 
-
 .mini-service-card {
-
   min-width: 0;
 
   display: flex;
@@ -640,8 +1110,7 @@
   border-radius: 12px;
 
   border:
-    1px solid
-    rgba(255, 255, 255, 0.1);
+    1px solid rgba(255, 255, 255, 0.1);
 
   background:
     rgba(255, 255, 255, 0.045);
@@ -661,11 +1130,11 @@
 
   transition:
     0.3s ease;
+
+  overflow: hidden;
 }
 
-
 .mini-service-card:hover {
-
   color: #ffffff;
 
   background:
@@ -678,25 +1147,24 @@
     translateY(-2px);
 }
 
-
 .mini-icon {
-
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  flex-shrink: 0;
 
   color:
     rgba(107, 211, 255, 0.9);
 }
 
-
-/* =========================================================
-   EXTRA HERO BACKGROUND GRID
-========================================================= */
+/* ==========================================================================
+   HERO GRID GLOW
+   ========================================================================== */
 
 .hero-grid-glow {
-
   position: absolute;
 
   inset: 0;
@@ -734,679 +1202,1212 @@
     );
 }
 
+/* ==========================================================================
+   FLOATING STATS
+   ========================================================================== */
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 1200px) {
-
-  .hero-body-grid {
-
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(320px, 0.55fr);
-
-    gap: 40px;
-
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-
-
-  .hero-service-card {
-
-    min-height: 325px;
-
-    padding: 23px;
-  }
-
-
-  .service-card-content h2 {
-
-    font-size: 30px;
-  }
-
-}
-
-
-@media (max-width: 900px) {
-
-  .hero-body-grid {
-
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-
-    padding:
-      125px 35px 190px;
-  }
-
-
-  .hero-content {
-
-    max-width: 700px;
-  }
-
-
-  .hero-service-area {
-
-    max-width: 500px;
-
-    margin:
-      0 auto;
-  }
-
-
-  .hero-service-card {
-
-    min-height: 320px;
-  }
-
-}
-
-
-@media (max-width: 600px) {
-
-  .hero-body-grid {
-
-    padding:
-      105px 20px 175px;
-
-    gap: 25px;
-  }
-
-
-  .hero-service-area {
-
-    width: 100%;
-
-    max-width: none;
-  }
-
-
-  .hero-service-card {
-
-    min-height: 300px;
-
-    padding: 20px;
-
-    border-radius: 21px;
-  }
-
-
-  .service-icon-box {
-
-    width: 38px;
-    height: 38px;
-
-    border-radius: 16px;
-  }
-
-
-  .service-card-content {
-
-    margin-top: 25px;
-  }
-
-
-  .service-card-content h2 {
-
-    font-size: 28px;
-  }
-
-
-  .service-card-content p {
-
-    font-size: 12px;
-
-    line-height: 1.6;
-
-    max-width: 100%;
-  }
-
-
-  .service-card-footer {
-
-    left: 20px;
-    right: 20px;
-
-    bottom: 18px;
-  }
-
-
-  .mini-service-list {
-
-    grid-template-columns:
-      repeat(3, 1fr);
-
-    gap: 5px;
-  }
-
-
-  .mini-service-card {
-
-    padding:
-      9px 4px;
-
-    font-size: 8px;
-
-    gap: 4px;
-  }
-
-
-  .mini-icon svg {
-
-    width: 13px;
-    height: 13px;
-  }
-
-}
-
-
-@media (max-width: 400px) {
-
-  .hero-body-grid {
-
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-
-  .mini-service-card {
-
-    font-size: 7px;
-  }
-
-
-  .service-card-content h2 {
-
-    font-size: 25px;
-  }
-
-}
-/* NAVBAR */
-.hero-navbar {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 35px 55px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.nav-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: #00c2ff;
-}
-
-/* Glass Contact Button with Animated Gradient Border */
-.contact-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  height: 42px;
-  padding: 0 28px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: 600;
-  color: #ffffff;
-  text-decoration: none;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  overflow: hidden;
-  z-index: 1;
-  transition: all 0.35s ease;
-}
-
-.contact-btn::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    #7c3aed,
-    #ec4899,
-    #8b5cf6,
-    #06b6d4,
-    #7c3aed
-  );
-  background-size: 300% 300%;
-  animation: borderMove 6s linear infinite;
-  z-index: -2;
-}
-
-.contact-btn::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  border-radius: inherit;
-  background: rgba(12, 18, 34, 0.78);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  z-index: -1;
-}
-
-.contact-btn:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 0 18px rgba(236, 72, 153, 0.35),
-    0 0 35px rgba(124, 58, 237, 0.25);
-}
-
-@keyframes borderMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* HERO BODY GRID */
-.hero-body-grid {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  padding: 0 55px;
-  min-height: 480px;
-}
-
-/* HERO CONTENT (Left side) */
-.hero-content {
-  max-width: 680px;
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  border-radius: 40px;
-  background: rgba(0, 212, 255, 0.1);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  color: #00d4ff;
-  letter-spacing: 1.2px;
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  border: 1px solid rgba(0, 212, 255, 0.3);
-}
-
-.badge-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #00d4ff;
-  box-shadow: 0 0 10px #00d4ff;
-}
-
-.hero-content h1 {
-  font-size: 68px;
-  line-height: 1.05;
-  color: #ffffff;
-  font-weight: 800;
-  margin-bottom: 24px;
-  letter-spacing: -1px;
-}
-
-.hero-gradient-text {
-  background: linear-gradient(90deg, #00a8ff 0%, #00d4ff 50%, #5cffb1 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-.paragraphs {
-  width: 560px;
-  font-size: 14px;
-  color: #e2e8f0;
-  line-height: 1.5;
-  margin-bottom: 36px;
-}
-
-/* BUTTONS */
-.hero-buttons {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 36px;
-  margin-top: 10px;
-}
-
-.primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  height: 48px;
-  padding: 0 36px;
-  border: none;
-  border-radius: 50px;
-  background: linear-gradient(90deg, #0094ff, #00d8ff);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 148, 255, 0.4);
-  transition: all 0.35s ease;
-}
-
-.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 216, 255, 0.55);
-}
-
-.primary .btn-arrow {
-  transition: transform 0.3s ease;
-}
-
-.primary:hover .btn-arrow {
-  transform: translateX(4px);
-}
-
-.secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 48px;
-  padding: 0 36px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  cursor: pointer;
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  transition: all 0.35s ease;
-}
-
-.secondary:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.45);
-  transform: translateY(-3px);
-}
-
-/* SOCIAL ICONS */
-.socials {
-
-  position:absolute;
-
-  right:45px;
-
-  bottom:-50px;
-
-  z-index:2;
-
-
-  display:flex;
-
-  align-items:center;
-
-  gap:14px;
-
-}
-.socials a {
-
-  width:42px;
-
-  height:42px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-
-  border-radius:50%;
-
-
-  color:white;
-
-
-  background:
-    rgba(255,255,255,0.08);
-
-
-  border:
-    1px solid rgba(255,255,255,0.2);
-
-
-  backdrop-filter:
-    blur(15px);
-
-
-  -webkit-backdrop-filter:
-    blur(15px);
-
-
-  transition:
-    all .35s ease;
-
-}
-
-
-
-.socials a:hover {
-
-  transform:
-    translateY(-5px);
-
-
-  background:
-    rgba(0,194,255,.18);
-
-
-  border-color:
-    #00c2ff;
-
-
-  box-shadow:
-    0 0 25px rgba(0,194,255,.4);
-
-}
-
-.socials a:hover {
-  background: #00a8ff;
-  border-color: #00a8ff;
-  transform: translateY(-4px);
-  box-shadow: 0 6px 20px rgba(0, 168, 255, 0.4);
-}
-
-/* FLOATING STATS ROW */
 .hero-stats {
   position: relative;
+
   z-index: 10;
+
   display: flex;
+
+  align-items: flex-start;
+
   gap: 60px;
+
   margin-left: 70px;
+
   margin-bottom: 76px;
 }
 
 .stat-card {
   display: flex;
+
   flex-direction: column;
 }
 
 .stat-card h3 {
   font-size: 22px;
+
   font-weight: 800;
+
   color: #ffffff;
+
   margin: 0;
+
   line-height: 1;
 }
 
 .stat-card span {
   font-size: 12px;
+
   color: #b6c8d9;
+
   margin-top: 2px;
+
   font-weight: 500;
 }
 
-/* SCROLL INDICATOR */
+/* ==========================================================================
+   SOCIAL ICONS
+   ========================================================================== */
+
+.socials {
+  position: absolute;
+
+  right: 45px;
+
+  bottom: 20px;
+
+  z-index: 15;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.socials a {
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  transition:
+    all 0.35s ease;
+}
+
+.socials a:hover {
+  background: #00a8ff;
+
+  border-color: #00a8ff;
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 6px 20px rgba(0, 168, 255, 0.4);
+}
+
+/* ==========================================================================
+   SCROLL INDICATOR
+   ========================================================================== */
+
 .scroll-indicator {
   position: absolute;
+
   bottom: 20px;
+
   left: 50%;
+
   transform: translateX(-50%);
+
   z-index: 10;
+
   display: flex;
+
   justify-content: center;
+
+  pointer-events: none;
 }
 
 .scroll-indicator span {
   width: 22px;
+
   height: 36px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+
+  border:
+    2px solid rgba(255, 255, 255, 0.3);
+
   border-radius: 20px;
+
   position: relative;
 }
 
 .scroll-indicator span::before {
   content: "";
+
   position: absolute;
+
   top: 6px;
+
   left: 50%;
+
   transform: translateX(-50%);
+
   width: 4px;
+
   height: 8px;
+
   background: #00c2ff;
+
   border-radius: 4px;
-  animation: scrollDown 2s infinite;
+
+  animation:
+    scrollDown 2s infinite;
 }
 
 @keyframes scrollDown {
-  0% { opacity: 1; transform: translate(-50%, 0); }
-  100% { opacity: 0; transform: translate(-50%, 14px); }
+  0% {
+    opacity: 1;
+
+    transform:
+      translate(-50%, 0);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform:
+      translate(-50%, 14px);
+  }
 }
 
-/* MOBILE TOGGLE BUTTON */
+/* ==========================================================================
+   MOBILE TOGGLE
+   IMPORTANT:
+   HIDDEN ON ALL TABLET + MOBILE
+   ========================================================================== */
+
 .mobile-toggle {
-  display: none;
+  display: none !important;
 }
 
-/* RESPONSIVE DESIGN */
+/* ==========================================================================
+   TABLET
+   992px - 1200px
+   ========================================================================== */
+
 @media (max-width: 1200px) {
-  .hero-card { height: 820px; }
-  .hero-content { width: 520px; margin-left: 45px; }
-  .hero-content h1 { font-size: 48px; }
-  .paragraphs { width: 460px; }
-  .hero-stats { margin-left: 45px; gap: 40px; }
-  .hero-building-frame { max-width: 380px; height: 350px; }
+
+  .hero {
+    padding: 15px 10px;
+  }
+
+  .hero-card {
+    height: 820px;
+  }
+
+  /*
+     Keep navbar visible on medium desktop/tablet-landscape
+     but reduce spacing.
+  */
+
+  .hero-navbar {
+    display:none !important;
+    /* padding:
+      30px 40px;
+  } */
+
+  .nav-links {
+    gap: 25px;
+
+    margin-right: 20px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .contact-btn {
+    padding: 0 22px;
+
+    font-size: 14px;
+  }
+
+  .hero-body-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(320px, 0.65fr);
+
+    gap: 40px;
+
+    padding:
+      0 50px;
+  }
+
+  .hero-content {
+    width: 100%;
+
+    max-width: 520px;
+
+    margin-left: 45px;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .paragraphs {
+    width: 460px;
+
+    max-width: 100%;
+  }
+
+  .hero-service-area {
+    max-width: 420px;
+  }
+
+  .hero-service-card {
+    height: 300px;
+
+    min-height: 300px;
+
+    padding: 23px;
+  }
+
+  .service-card-content h2 {
+    font-size: 30px;
+  }
+
+  .hero-stats {
+    margin-left: 45px;
+
+    gap: 40px;
+  }
 }
+
+/* ==========================================================================
+   TABLET PORTRAIT
+   IMPORTANT:
+   NAVBAR COMPLETELY HIDDEN
+   ========================================================================== */
 
 @media (max-width: 991px) {
-  .hero-body-grid { grid-template-columns: 1fr; padding-right: 0; }
-  .hero-right-visual { display: none; }
-}
 
-@media (max-width: 768px) {
-  .hero-card {
-    height: auto;
-    min-height: 650px;
-    padding: 24px 20px;
-    -webkit-mask: none;
-    mask: none;
-    border-radius: 24px;
+  .hero {
+    min-height: 100vh;
+
+    padding:
+      0;
   }
-  .hero-navbar { padding: 18px 0; }
-  .hero-content { width: 100%; margin: 20px 0 0 0; }
-  .hero-content h1 { font-size: 34px; }
-  .paragraphs { width: 100%; font-size: 14px; }
-  .hero-buttons { flex-direction: column; width: 100%; gap: 12px; }
-  .primary, .secondary { width: 100%; }
-  .hero-stats { margin-left: 0; flex-wrap: wrap; gap: 24px; margin-top: 24px; }
+
+  /*
+     HIDE ENTIRE NAVBAR ON TABLET
+  */
+
+  .hero-navbar {
+    display: none !important;
+  }
 
   .mobile-toggle {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .contact-btn {
+    display: none !important;
+  }
+
+  .hero-card {
+    width: 100%;
+
+    height: auto;
+
+    min-height: 100svh;
+
+    margin-top: 0;
+
+    padding:
+      50px 35px 80px;
+
+    border-radius: 0;
+
+    -webkit-mask: none;
+
+    mask: none;
+
+    overflow: hidden;
+
+    justify-content: flex-start;
+  }
+
+  .hero-body-grid {
     display: flex;
+
     flex-direction: column;
-    justify-content: center;
+
     align-items: center;
-    gap: 6px;
-    width: 42px;
-    height: 42px;
-    padding: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.06);
-    cursor: pointer;
-    z-index: 10;
+
+    justify-content: center;
+
+    gap: 45px;
+
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 35px 0 80px;
+
+    box-sizing: border-box;
   }
 
-  .mobile-toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background: white;
-    border-radius: 999px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  .hero-content {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin:
+      0 auto;
+
+    text-align: center;
   }
 
-  .mobile-toggle.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-  .mobile-toggle.open span:nth-child(2) { opacity: 0; }
-  .mobile-toggle.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .engineeringconten {
+    width: 100%;
 
-  .nav-links { display: none; }
+    max-width: 650px;
 
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin-top: 12px;
-    padding: 18px 20px 22px;
-    background: rgba(8, 18, 36, 0.97);
-    border-radius: 24px;
-    backdrop-filter: blur(16px);
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.25);
-    z-index: 100;
+    margin:
+      0 auto;
   }
 
-  .nav-links.open a {
-    display: block;
-    color: white;
-    font-size: 1rem;
-    padding: 8px 0;
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .paragraphs {
+    width: 100%;
+
+    max-width: 620px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-service-area {
+    width: 100%;
+
+    max-width: 520px;
+
+    margin:
+      0 auto;
+  }
+
+  .hero-service-card {
+    width: 100%;
+
+    height: 300px;
+
+    min-height: 300px;
+  }
+
+  .hero-stats {
+    width: 100%;
+
+    justify-content: center;
+
+    margin:
+      10px 0 50px;
+
+    gap: 45px;
+  }
+
+  .socials {
+    right: 30px;
+
+    bottom: 25px;
+  }
+
+  .scroll-indicator {
+    display: none;
   }
 }
 
-@media (max-width: 420px) {
-  .hero-content h1 { font-size: 28px; }
-  .badge { padding: 6px 14px; font-size: 9px; }
+/* ==========================================================================
+   MOBILE
+   <= 768px
+   NAVBAR COMPLETELY HIDDEN
+   ========================================================================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100svh;
+
+    width: 100%;
+
+    padding: 0;
+
+    overflow-x: hidden;
+  }
+
+  /*
+     HIDE NAVBAR COMPLETELY
+  */
+
+  .hero-navbar {
+    display: none !important;
+  }
+
+  .mobile-toggle {
+    display: none !important;
+  }
+
+  .nav-links,
+  .nav-links.open {
+    display: none !important;
+  }
+
+  .contact-btn {
+    display: none !important;
+  }
+
+  /* =====================================================
+     HERO CARD
+  ===================================================== */
+
+  .hero-card {
+    width: 100%;
+
+    min-height: 100svh;
+
+    height: auto;
+
+    margin: 0;
+
+    padding:
+      35px 20px 90px;
+
+    border-radius: 0;
+
+    -webkit-mask: none;
+
+    mask: none;
+
+    overflow: hidden;
+  }
+
+  /* =====================================================
+     VIDEO
+  ===================================================== */
+
+  .hero-video {
+    object-position: center center;
+
+    opacity: 0.8;
+  }
+
+  /* =====================================================
+     OVERLAY
+  ===================================================== */
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 18, 32, 0.75) 0%,
+        rgba(7, 18, 32, 0.78) 50%,
+        rgba(7, 18, 32, 0.9) 100%
+      );
+  }
+
+  /* =====================================================
+     GLOW
+  ===================================================== */
+
+  .orb-1 {
+    width: 300px;
+
+    height: 300px;
+
+    top: -5%;
+
+    left: -20%;
+  }
+
+  .orb-2 {
+    width: 320px;
+
+    height: 320px;
+
+    right: -25%;
+
+    bottom: -5%;
+  }
+
+  .hero-grid-glow {
+    opacity: 0.12;
+
+    background-size:
+      45px 45px;
+  }
+
+  /* =====================================================
+     BODY
+  ===================================================== */
+
+  .hero-body-grid {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    width: 100%;
+
+    min-height: auto;
+
+    gap: 32px;
+
+    padding:
+      15px 0 25px;
+
+    box-sizing: border-box;
+  }
+
+  /* =====================================================
+     CONTENT
+  ===================================================== */
+
+  .hero-content {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    text-align: center;
+  }
+
+  /* =====================================================
+     BADGE
+  ===================================================== */
+
+  .badge {
+    max-width: 100%;
+
+    margin-bottom: 16px;
+
+    padding:
+      7px 13px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    white-space: normal;
+
+    justify-content: center;
+  }
+
+  .badge-dot {
+    width: 6px;
+
+    height: 6px;
+  }
+
+  /* =====================================================
+     ENGINEERING GLASS BOX
+  ===================================================== */
+
+  .engineeringconten {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 0;
+
+    margin: 0 auto;
+
+    border-radius: 22px;
+
+    background:
+      rgba(8, 19, 33, 0.25);
+
+    backdrop-filter: blur(4px);
+
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  /* =====================================================
+     HEADING
+  ===================================================== */
+
+  .hero-content h1 {
+    width: 100%;
+
+    font-size: 34px;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.6px;
+
+    margin:
+      0 0 18px;
+  }
+
+  .hero-gradient-text {
+    display: inline;
+  }
+
+  /* =====================================================
+     PARAGRAPH
+  ===================================================== */
+
+  .paragraphs {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin:
+      0 auto 24px;
+
+    padding: 0 4px;
+
+    box-sizing: border-box;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+
+    color:
+      rgba(226, 232, 240, 0.9);
+  }
+
+  /* =====================================================
+     BUTTONS
+  ===================================================== */
+
+  .hero-buttons {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 11px;
+
+    margin:
+      0 auto;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+
+    height: 48px;
+
+    padding:
+      0 20px;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+  }
+
+  /* =====================================================
+     SERVICE AREA
+  ===================================================== */
+
+  .hero-service-area {
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    align-items: center;
+  }
+
+  .service-carousel-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 11px;
+  }
+
+  /* =====================================================
+     SERVICE CARD
+  ===================================================== */
+
+  .hero-service-card {
+    width: 100%;
+
+    height: 270px;
+
+    min-height: 270px;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    box-sizing: border-box;
+  }
+
+  .service-icon-box {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 15px;
+  }
+
+  .service-number {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .service-card-content {
+    margin-top: 18px;
+
+    text-align: left;
+  }
+
+  .service-subtitle {
+    font-size: 7px;
+
+    letter-spacing: 1.7px;
+  }
+
+  .service-card-content h2 {
+    font-size: 25px;
+
+    line-height: 1.15;
+
+    margin-top: 2px;
+  }
+
+  .service-card-content p {
+    width: 100%;
+
+    max-width: 100%;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+
+    margin-top: 7px;
+  }
+
+  .service-card-footer {
+    left: 18px;
+
+    right: 18px;
+
+    bottom: 14px;
+
+    padding-top: 7px;
+
+    font-size: 9px;
+
+    letter-spacing: 0.8px;
+  }
+
+  .service-arrow {
+    width: 22px;
+
+    height: 22px;
+  }
+
+  /* =====================================================
+     DOTS
+  ===================================================== */
+
+  .service-carousel-dots {
+    margin-top: 13px;
+
+    gap: 5px;
+  }
+
+  .service-carousel-dots button {
+    width: 5px;
+
+    height: 5px;
+  }
+
+  .service-carousel-dots button.active {
+    width: 20px;
+  }
+
+  /* =====================================================
+     MINI CARDS
+  ===================================================== */
+
+  .mini-service-list {
+    width: 100%;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 5px;
+
+    margin-top: 11px;
+  }
+
+  .mini-service-card {
+    min-width: 0;
+
+    width: 100%;
+
+    padding:
+      8px 3px;
+
+    gap: 4px;
+
+    border-radius: 10px;
+
+    font-size: 7px;
+
+    letter-spacing: 0;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+  }
+
+  .mini-service-card > span:last-child {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+  }
+
+  .mini-icon svg {
+    width: 12px;
+
+    height: 12px;
+  }
+
+  /* =====================================================
+     STATS
+  ===================================================== */
+
+  .hero-stats {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, 1fr);
+
+    gap: 8px;
+
+    margin:
+      5px 0 0;
+
+    padding:
+      0 2px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+  }
+
+  .stat-card {
+    align-items: center;
+
+    min-width: 0;
+  }
+
+  .stat-card h3 {
+    font-size: 18px;
+  }
+
+  .stat-card span {
+    font-size: 8px;
+
+    line-height: 1.3;
+
+    margin-top: 4px;
+
+    color:
+      rgba(182, 200, 217, 0.85);
+  }
+
+  /* =====================================================
+     SOCIAL ICONS
+  ===================================================== */
+
+  .socials {
+    position: absolute;
+
+    left: 50%;
+
+    right: auto;
+
+    bottom: 20px;
+
+    transform:
+      translateX(-50%);
+
+    gap: 10px;
+
+    z-index: 30;
+  }
+
+  .socials a {
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 13px;
+  }
+
+  /* =====================================================
+     SCROLL
+  ===================================================== */
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE
+   <= 480px
+   ========================================================================== */
+
+@media (max-width: 480px) {
+
+  .hero-card {
+    padding:
+      28px 15px 82px;
+  }
+
+  .hero-body-grid {
+    gap: 27px;
+
+    padding-top: 8px;
+  }
+
+  .hero-content h1 {
+    font-size: 29px;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.5px;
+  }
+
+  .badge {
+    font-size: 7px;
+
+    padding:
+      6px 11px;
+
+    gap: 6px;
+  }
+
+  .paragraphs {
+    font-size: 12px;
+
+    line-height: 1.6;
+  }
+
+  .hero-service-card {
+    height: 255px;
+
+    min-height: 255px;
+
+    padding: 16px;
+
+    border-radius: 18px;
+  }
+
+  .service-card-content {
+    margin-top: 15px;
+  }
+
+  .service-card-content h2 {
+    font-size: 22px;
+  }
+
+  .service-card-content p {
+    font-size: 10px;
+
+    line-height: 1.5;
+  }
+
+  .service-card-footer {
+    left: 16px;
+
+    right: 16px;
+
+    bottom: 12px;
+
+    font-size: 8px;
+  }
+
+  .mini-service-card {
+    font-size: 6.5px;
+
+    padding:
+      7px 2px;
+  }
+
+  .mini-icon svg {
+    width: 11px;
+
+    height: 11px;
+  }
+
+  .hero-stats {
+    gap: 5px;
+  }
+
+  .stat-card h3 {
+    font-size: 16px;
+  }
+
+  .stat-card span {
+    font-size: 7px;
+  }
+
+  .socials a {
+    width: 34px;
+
+    height: 34px;
+  }
+}
+
+/* ==========================================================================
+   VERY SMALL MOBILE
+   <= 380px
+   ========================================================================== */
+
+@media (max-width: 380px) {
+
+  .hero-card {
+    padding:
+      24px 12px 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 26px;
+  }
+
+  .paragraphs {
+    font-size: 11px;
+  }
+
+  .hero-service-card {
+    height: 245px;
+
+    min-height: 245px;
+  }
+
+  .service-card-content h2 {
+    font-size: 20px;
+  }
+
+  .service-card-content p {
+    font-size: 9px;
+  }
+
+  .mini-service-card {
+    font-size: 6px;
+  }
+
+  .stat-card h3 {
+    font-size: 15px;
+  }
+
+  .stat-card span {
+    font-size: 6.5px;
+  }
+}
+
+/* ==========================================================================
+   ACCESSIBILITY / TOUCH DEVICES
+   ========================================================================== */
+
+@media (hover: none) {
+
+  .hero-service-card:hover {
+    transform: none;
+
+    border-color:
+      rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+      0 25px 70px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  .primary:hover,
+  .secondary:hover,
+  .contact-btn:hover,
+  .socials a:hover {
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+/* =========================================================
+   HIDE HERO NAVBAR ON TABLET + MOBILE
+   Desktop: visible
+   Tablet/Mobile: hidden
+========================================================= */
+
+@media screen and (max-width: 1024px) {
+  .hero .hero-navbar {
+    display: none !important;
+  }
+
+  .hero .mobile-toggle {
+    display: none !important;
+  }
+
+  .hero .nav-links {
+    display: none !important;
+  }
+
+  .hero .contact-btn {
+    display: none !important;
+  }
+}
 }

@@ -466,7 +466,7 @@ export default function DarkHeroSection() {
 
           {/* MOBILE MENU BUTTON */}
 
-          <button
+          {/* <button
             type="button"
             className={`mobile-toggle ${
               menuOpen ? 'open' : ''
@@ -487,7 +487,7 @@ export default function DarkHeroSection() {
             <span />
             <span />
             <span />
-          </button>
+          </button> */}
 
           {/* NAVIGATION */}
 

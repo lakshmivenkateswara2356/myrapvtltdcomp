@@ -1772,6 +1772,8 @@
   }
 
   .company-logo {
+    display:
+      none;
     height:
       28px;
 

@@ -713,6 +713,13 @@
   }
 
 
+  .brand-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+
   .nav-dropdown-menu.visible,
   .nav-dropdown.dropdown-open
     .nav-dropdown-menu {
@@ -998,7 +1005,7 @@
 
     padding:
 
-      0 16px;
+      0 26px;
 
 
   }
