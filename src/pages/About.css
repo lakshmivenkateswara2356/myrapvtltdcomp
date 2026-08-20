@@ -1,0 +1,1146 @@
+/* =========================================================
+   ABOUT PAGE
+   IMPORTANT:
+   All About-specific selectors are scoped to .about-page
+   so they do NOT affect the Home Hero.
+========================================================= */
+
+.about-page {
+    width: 100%;
+    overflow-x: hidden;
+    background: #07111f;
+    
+    color: #ffffff;
+    font-family: "Inter", sans-serif;
+    position: relative;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.about-page section {
+    position: relative;
+    padding: 10px 8%;
+    box-sizing: border-box;
+}
+
+.about-page .title-center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-page .title-center span {
+    color: #42d6ff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.about-page .title-center h2 {
+    margin-top: 18px;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.about-page .section-tag {
+    color: #3ad7ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.about-page .about-hero {
+    position: relative;
+
+    width: 100%;
+    height: 60vh;
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+
+    /*
+       IMPORTANT:
+       Keep this lower than Navbar.
+    */
+    z-index: 1;
+}
+
+
+/* =========================================================
+   ABOUT HERO IMAGE
+========================================================= */
+
+.about-page .about-hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ABOUT HERO OVERLAY
+========================================================= */
+
+.about-page .about-hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 12, 20, 0.45),
+            rgba(3, 8, 15, 0.65)
+        );
+}
+
+
+/* =========================================================
+   ABOUT HERO CONTENT
+========================================================= */
+
+.about-page .about-hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+    max-width: 1000px;
+
+    padding: 0 30px;
+
+    text-align: center;
+
+    /*
+       PERMANENTLY VISIBLE
+    */
+    opacity: 1;
+    visibility: visible;
+
+    transform: none;
+
+    pointer-events: auto;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   ABOUT HERO SMALL TITLE
+========================================================= */
+
+.about-page .about-hero-content p {
+    margin: 0 0 18px;
+
+    color: #35d7ff;
+
+    text-transform: uppercase;
+
+    letter-spacing: 6px;
+
+    font-weight: 600;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   ABOUT HERO MAIN TITLE
+========================================================= */
+
+.about-page .about-hero-content h1 {
+    margin: 0;
+
+    font-size: 8rem;
+
+    font-weight: 900;
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #42d6ff,
+            #7b6dff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    /*
+       Only the About title gets this animation.
+       It does NOT affect Home Hero h1.
+    */
+    animation: aboutTitleFloat 4s ease-in-out infinite;
+}
+
+
+@keyframes aboutTitleFloat {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================================
+   ABOUT HERO DESCRIPTION
+========================================================= */
+
+.about-page .about-hero-content span {
+    display: block;
+
+    margin-top: 30px;
+
+    color: #d5d5d5;
+
+    font-size: 1.2rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   COMPANY
+========================================================= */
+
+.about-page .company-section {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.about-page .company-left {
+    position: relative;
+}
+
+
+.about-page .company-left img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.45);
+
+    transition: 0.5s;
+}
+
+
+.about-page .company-left img:hover {
+    transform: scale(1.03);
+}
+
+
+.about-page .company-right h2 {
+    font-size: 3rem;
+
+    line-height: 1.25;
+
+    margin: 20px 0;
+}
+
+
+.about-page .company-right p {
+    color: #d2d2d2;
+
+    margin-bottom: 22px;
+
+    line-height: 1.9;
+
+    font-size: 1.02rem;
+}
+
+
+.about-page .company-buttons {
+    margin-top: 35px;
+}
+
+
+.about-page .company-buttons button {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: none;
+
+    padding: 16px 34px;
+
+    border-radius: 60px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00b9ff,
+            #7b6dff
+        );
+
+    transition: 0.35s;
+}
+
+
+.about-page .company-buttons button:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 190, 255, 0.4);
+}
+
+
+/* =========================================================
+   MISSION
+========================================================= */
+
+.about-page .mission-section {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    line-height: 0.4;
+
+    gap: 15px;
+}
+
+
+.about-page .mission-card {
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+    transition: 0.4s;
+}
+
+
+.about-page .mission-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #3fd8ff;
+}
+
+
+.about-page .mission-card svg {
+    color: #42d6ff;
+height: 24px;
+    margin-bottom: 25px;
+}
+
+
+.about-page .mission-card h3 {
+    font-size: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+.about-page .mission-card p {
+    color: #d2d2d2;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   GLASS
+========================================================= */
+
+.about-page .glass {
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================================
+   CORE VALUES
+========================================================= */
+
+.about-page .values-section {
+    padding-top: 40px;
+}
+
+
+.about-page .values-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+}
+
+
+.about-page .value-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    transition: 0.45s ease;
+}
+
+
+.about-page .value-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    background: #34d8ff22;
+
+    border-radius: 50%;
+
+    top: -80px;
+    right: -80px;
+
+    transition: 0.5s;
+}
+
+
+.about-page .value-card:hover {
+    transform: translateY(-12px);
+
+    border-color: #37d8ff;
+
+    box-shadow:
+        0 20px 60px rgba(0, 170, 255, 0.18);
+}
+
+
+.about-page .value-card:hover::before {
+    transform: scale(1.5);
+}
+
+
+.about-page .value-card svg {
+    color: #39d7ff;
+
+    margin-bottom: 25px;
+}
+
+
+.about-page .value-card h3 {
+    margin-bottom: 18px;
+
+    font-size: 1.45rem;
+}
+
+
+.about-page .value-card p {
+    color: #cfcfcf;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.about-page .timeline-section {
+    padding-top: 130px;
+}
+
+
+.about-page .timeline {
+    position: relative;
+
+    max-width: 1100px;
+
+    margin: auto;
+}
+
+
+.about-page .timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 4px;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            #38d8ff,
+            #6e6cff
+        );
+
+    transform: translateX(-50%);
+}
+
+
+.about-page .timeline-item {
+    position: relative;
+
+    width: 50%;
+
+    padding: 40px;
+
+    box-sizing: border-box;
+}
+
+
+.about-page .timeline-item:nth-child(odd) {
+    left: 0;
+
+    text-align: right;
+}
+
+
+.about-page .timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+
+.about-page .timeline-year {
+    display: inline-block;
+
+    padding: 12px 24px;
+
+    border-radius: 40px;
+
+    background: #36d7ff;
+
+    color: #081320;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+
+.about-page .timeline-content {
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 24px;
+
+    padding: 30px;
+}
+
+
+.about-page .timeline-content h3 {
+    margin-bottom: 15px;
+
+    font-size: 1.5rem;
+}
+
+
+.about-page .timeline-content p {
+    color: #d2d2d2;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   INDUSTRIES
+========================================================= */
+
+.about-page .industries-section {
+    padding-top: 10px;
+    background-color:#07111F;
+}
+
+
+
+.about-page .industry-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+}
+
+
+
+
+
+.about-page .industry-card {
+    background:
+       #163242;
+
+    border-radius: 24px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    transition: 0.4s;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.about-page .industry-card:hover {
+    transform: translateY(-10px);
+
+    border-color: #36d8ff;
+
+    box-shadow:
+        0 18px 50px rgba(0, 180, 255, 0.18);
+}
+
+
+.about-page .industry-card svg {
+    color: #39d8ff;
+
+    margin-bottom: 20px;
+}
+
+
+.about-page .industry-card h3 {
+    font-size: 1.35rem;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.about-page .stats-section {
+    padding-top: 70px;
+}
+
+
+.about-page .stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+.about-page .stat-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.03)
+        );
+
+    border-radius: 22px;
+
+    text-align: center;
+
+    padding: 20px;
+
+    transition: 0.35s;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.about-page .stat-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #39d8ff;
+}
+
+
+.about-page .stat-card h2 {
+    font-size:28px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #3cd8ff,
+            #6f6cff
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    margin-bottom: 6px;
+}
+
+
+.about-page .stat-card span {
+    color: #d2d2d2;
+font-size:13px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   LEADERSHIP
+========================================================= */
+
+.about-page .leadership-section {
+    padding-top: 80px;
+}
+
+
+.about-page .leadership-card {
+    display: grid;
+
+    grid-template-columns: 180px 1fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 30px;
+
+    padding: 55px;
+
+    transition: 0.4s;
+}
+
+
+.about-page .leadership-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #38d8ff;
+}
+
+
+.about-page .leadership-icon {
+    width: 160px;
+    height: 160px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #32d7ff,
+            #6c6bff
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #ffffff;
+}
+
+
+.about-page .leadership-card p {
+    color: #d3d3d3;
+
+    line-height: 2;
+
+    margin-bottom: 18px;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.about-page .about-cta {
+    padding: 140px 8%;
+}
+
+
+.about-page .about-cta > div {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 35px;
+
+    text-align: center;
+
+    padding: 100px 60px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f2038,
+            #132c52,
+            #183d73
+        );
+}
+
+
+.about-page .about-cta > div::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: #35d8ff22;
+
+    top: -200px;
+    left: -150px;
+
+    filter: blur(20px);
+}
+
+
+.about-page .about-cta > div::after {
+    content: "";
+
+    position: absolute;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background: #6b6cff22;
+
+    bottom: -180px;
+    right: -120px;
+}
+
+
+.about-page .about-cta h2 {
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 3.4rem;
+
+    margin-bottom: 20px;
+}
+
+
+.about-page .about-cta p {
+    position: relative;
+
+    z-index: 2;
+
+    color: #d4d4d4;
+
+    font-size: 1.15rem;
+
+    line-height: 1.9;
+
+    max-width: 760px;
+
+    margin: 0 auto 40px;
+}
+
+
+.about-page .about-cta button {
+    position: relative;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: none;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    padding: 18px 42px;
+
+    border-radius: 60px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #34d7ff,
+            #6f6cff
+        );
+
+    transition: 0.35s;
+}
+
+
+.about-page .about-cta button:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(0, 180, 255, 0.35);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .about-page .company-section {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .mission-section {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-page .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-page .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-page .timeline::before {
+        left: 35px;
+    }
+
+    .about-page .timeline-item {
+        width: 100%;
+
+        left: 0 !important;
+
+        padding-left: 90px;
+
+        padding-right: 20px;
+
+        text-align: left !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .about-page section {
+        padding: 80px 20px;
+    }
+
+    .about-page .about-hero {
+        height: 60vh;
+
+        min-height: 450px;
+
+        border-bottom-left-radius: 40px;
+
+        border-bottom-right-radius: 40px;
+    }
+
+    .about-page .about-hero-content {
+        padding: 0 15px;
+    }
+
+    .about-page .about-hero-content h1 {
+        font-size: 4rem;
+
+        letter-spacing: -1px;
+    }
+
+    .about-page .about-hero-content span {
+        font-size: 1rem;
+    }
+
+    .about-page .title-center h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-page .company-right h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-page .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .industry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-page .leadership-card {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .about-page .leadership-icon {
+        margin: auto;
+    }
+
+    .about-page .about-cta h2 {
+        font-size: 2.2rem;
+    }
+
+    .about-page .about-cta {
+        padding: 90px 20px;
+    }
+
+    .about-page .about-cta > div {
+        padding: 70px 30px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .about-page .about-hero-content p {
+        font-size: 0.75rem;
+
+        letter-spacing: 2px;
+    }
+
+    .about-page .about-hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .about-page .company-buttons button {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .about-page .timeline-item {
+        padding-left: 70px;
+    }
+
+    .about-page .timeline-year {
+        font-size: 0.8rem;
+
+        padding: 10px 18px;
+    }
+
+    .about-page .about-cta h2 {
+        font-size: 1.8rem;
+    }
+
+    .about-page .about-cta p {
+        font-size: 0.95rem;
+    }
+
+}

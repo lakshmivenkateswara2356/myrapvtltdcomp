@@ -1,0 +1,1163 @@
+/* =========================================================
+   WHY CHOOSE US PAGE
+========================================================= */
+
+.why-page {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: #07111f;
+
+  color: #ffffff;
+
+  font-family: "Inter", sans-serif;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.why-page .why-hero {
+  position: relative;
+
+  width: 100%;
+  height: 60vh;
+  min-height: 500px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-bottom-left-radius: 70px;
+  border-bottom-right-radius: 70px;
+
+  z-index: 1;
+}
+
+
+.why-page .why-hero-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+.why-page .why-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 12, 20, 0.82),
+      rgba(5, 12, 20, 0.60),
+      rgba(5, 12, 20, 0.40)
+    );
+}
+
+
+.why-page .why-hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 1000px;
+
+  padding: 0 30px;
+
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+
+.why-page .why-hero-tag {
+  display: inline-block;
+
+  margin-bottom: 20px;
+
+  color: #36d8ff;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  text-transform: uppercase;
+}
+
+
+.why-page .why-hero-content h1 {
+  margin: 0;
+
+  font-size: 5.5rem;
+
+  line-height: 1.05;
+
+  font-weight: 900;
+
+  letter-spacing: -2px;
+}
+
+
+.why-page .why-hero-content h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #00b9ff,
+      #42d6ff,
+      #7b6dff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+.why-page .why-hero-content p {
+  max-width: 750px;
+
+  margin: 30px auto 0;
+
+  color: #d6e0eb;
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   COMMON SECTION TITLE
+========================================================= */
+
+.why-page .why-title-center {
+  max-width: 800px;
+
+  margin: 0 auto 70px;
+
+  text-align: center;
+}
+
+
+.why-page .why-title-center > span {
+  display: inline-block;
+
+  margin-bottom: 15px;
+
+  color: #39d8ff;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+
+.why-page .why-title-center h2 {
+  margin: 0;
+
+  font-size: 3rem;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+
+.why-page .why-title-center p {
+  margin: 22px auto 0;
+
+  color: #bfcddd;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  max-width: 700px;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.why-page .why-intro {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 90px;
+
+  align-items: center;
+
+  padding: 120px 8%;
+}
+
+
+.why-page .why-intro-image {
+  position: relative;
+}
+
+
+.why-page .why-intro-image > img {
+  width: 100%;
+
+  min-height: 520px;
+
+  object-fit: cover;
+
+  display: block;
+
+  border-radius: 32px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+
+.why-page .why-image-badge {
+  position: absolute;
+
+  left: 30px;
+
+  bottom: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 18px 22px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(8, 20, 37, 0.88);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.14);
+
+  backdrop-filter: blur(18px);
+
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+
+.why-page .why-image-badge svg {
+  color: #39d8ff;
+}
+
+
+.why-page .why-image-badge div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.why-page .why-image-badge strong {
+  font-size: 0.95rem;
+}
+
+
+.why-page .why-image-badge span {
+  color: #9eb0c4;
+
+  font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   INTRO CONTENT
+========================================================= */
+
+.why-page .why-intro-content {
+  max-width: 620px;
+}
+
+
+.why-page .why-section-tag {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #3ad7ff;
+
+  font-size: 0.85rem;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+.why-page .why-intro-content h2 {
+  margin: 0 0 28px;
+
+  font-size: 3.2rem;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+
+.why-page .why-intro-content h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #00c2ff,
+      #7b6dff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+.why-page .why-intro-content > p {
+  color: #c6d1df;
+
+  font-size: 1rem;
+
+  line-height: 1.9;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   CHECK LIST
+========================================================= */
+
+.why-page .why-check-list {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  margin-top: 30px;
+}
+
+
+.why-page .why-check-list div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #dce7f2;
+
+  font-size: 0.9rem;
+}
+
+
+.why-page .why-check-list svg {
+  flex-shrink: 0;
+
+  color: #36d8ff;
+}
+
+
+/* =========================================================
+   ADVANTAGES
+========================================================= */
+
+.why-page .why-advantages {
+  padding: 120px 8%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #07111f,
+      #081523
+    );
+}
+
+
+.why-page .why-advantages-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+
+.why-page .why-advantage-card {
+  position: relative;
+
+  min-height: 270px;
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  backdrop-filter: blur(15px);
+
+  -webkit-backdrop-filter: blur(15px);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+.why-page .why-advantage-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+  height: 160px;
+
+  top: -80px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 212, 255, 0.18),
+      transparent 70%
+    );
+
+  transition: transform 0.5s ease;
+}
+
+
+.why-page .why-advantage-card:hover {
+  transform: translateY(-10px);
+
+  border-color:
+    rgba(0, 200, 255, 0.55);
+
+  box-shadow:
+    0 20px 55px rgba(0, 170, 255, 0.13);
+}
+
+
+.why-page .why-advantage-card:hover::before {
+  transform: scale(1.6);
+}
+
+
+.why-page .why-icon-box {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 28px;
+
+  border-radius: 17px;
+
+  color: #39d8ff;
+
+  background:
+    rgba(0, 194, 255, 0.1);
+
+  border:
+    1px solid rgba(0, 194, 255, 0.2);
+}
+
+
+.why-page .why-card-number {
+  position: absolute;
+
+  top: 28px;
+  right: 28px;
+
+  color:
+    rgba(255, 255, 255, 0.12);
+
+  font-size: 2.5rem;
+
+  font-weight: 900;
+}
+
+
+.why-page .why-advantage-card h3 {
+  position: relative;
+
+  margin: 0 0 14px;
+
+  font-size: 1.3rem;
+}
+
+
+.why-page .why-advantage-card p {
+  position: relative;
+
+  margin: 0;
+
+  color: #aebdce;
+
+  font-size: 0.9rem;
+
+  line-height: 1.8;
+}
+
+
+.why-page .why-card-line {
+  position: absolute;
+
+  bottom: 0;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #00c2ff,
+      #7b6dff
+    );
+
+  transition: width 0.4s ease;
+}
+
+
+.why-page .why-advantage-card:hover
+.why-card-line {
+  width: 100%;
+}
+
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.why-page .why-process {
+  padding: 130px 8%;
+}
+
+
+.why-page .why-process-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+
+.why-page .why-process-card {
+  position: relative;
+
+  padding: 35px 30px;
+
+  min-height: 250px;
+
+  border-radius: 24px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+.why-page .why-process-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #35d8ff;
+}
+
+
+.why-page .why-process-number {
+  color: #39d8ff;
+
+  font-size: 2.2rem;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  margin-bottom: 35px;
+}
+
+
+.why-page .why-process-icon {
+  position: absolute;
+
+  top: 32px;
+  right: 28px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #00a8ff,
+      #706cff
+    );
+}
+
+
+.why-page .why-process-card h3 {
+  margin: 0 0 14px;
+
+  font-size: 1.4rem;
+}
+
+
+.why-page .why-process-card p {
+  margin: 0;
+
+  color: #aebdce;
+
+  line-height: 1.8;
+
+  font-size: 0.92rem;
+}
+
+
+/* =========================================================
+   INDUSTRIES
+========================================================= */
+
+.why-page .why-industries {
+  padding: 120px 8%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #07111f,
+      #0a1727
+    );
+}
+
+
+.why-page .why-industry-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+.why-page .why-industry-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 26px 28px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.045);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.why-page .why-industry-card:hover {
+  transform: translateX(6px);
+
+  border-color: #32d8ff;
+
+  background:
+    rgba(0, 194, 255, 0.07);
+}
+
+
+.why-page .why-industry-card > span {
+  color: #39d8ff;
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+}
+
+
+.why-page .why-industry-card h3 {
+  flex: 1;
+
+  margin: 0;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+}
+
+
+.why-page .why-industry-card svg {
+  color: #7d8fa5;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.why-page .why-industry-card:hover svg {
+  color: #39d8ff;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.why-page .why-cta {
+  padding: 130px 8% 150px;
+}
+
+
+.why-page .why-cta-box {
+  position: relative;
+
+  overflow: hidden;
+
+  padding: 100px 50px;
+
+  text-align: center;
+
+  border-radius: 35px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0d2038,
+      #122d50,
+      #183d6b
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.why-page .why-cta-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  left: 50%;
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 194, 255, 0.13),
+      transparent 65%
+    );
+
+  pointer-events: none;
+}
+
+
+.why-page .why-cta-box > span {
+  position: relative;
+
+  z-index: 2;
+
+  color: #39d8ff;
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+
+.why-page .why-cta-box h2 {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 20px auto;
+
+  max-width: 800px;
+
+  font-size: 3.5rem;
+
+  line-height: 1.15;
+}
+
+
+.why-page .why-cta-box p {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 700px;
+
+  margin: 0 auto 35px;
+
+  color: #c7d3e0;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+
+.why-page .why-cta-box button {
+  position: relative;
+
+  z-index: 2;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 16px 34px;
+
+  border: none;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  background:
+    linear-gradient(
+      90deg,
+      #009dff,
+      #6d6cff
+    );
+
+  box-shadow:
+    0 12px 30px rgba(0, 157, 255, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.why-page .why-cta-box button:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 40px rgba(0, 180, 255, 0.4);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .why-page .why-intro {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+
+  .why-page .why-intro-content {
+    max-width: 100%;
+  }
+
+
+  .why-page .why-advantages-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .why-page .why-process-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .why-page .why-industry-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .why-page .why-hero {
+    height: 58vh;
+
+    min-height: 450px;
+
+    border-bottom-left-radius: 40px;
+
+    border-bottom-right-radius: 40px;
+  }
+
+
+  .why-page .why-hero-content {
+    padding: 0 20px;
+  }
+
+
+  .why-page .why-hero-tag {
+    font-size: 0.7rem;
+
+    letter-spacing: 3px;
+  }
+
+
+  .why-page .why-hero-content h1 {
+    font-size: 3rem;
+
+    letter-spacing: -1px;
+  }
+
+
+  .why-page .why-hero-content p {
+    font-size: 0.95rem;
+
+    line-height: 1.7;
+  }
+
+
+  .why-page .why-title-center {
+    margin-bottom: 50px;
+  }
+
+
+  .why-page .why-title-center h2 {
+    font-size: 2.2rem;
+  }
+
+
+  .why-page .why-intro {
+    padding: 80px 20px;
+
+    gap: 50px;
+  }
+
+
+  .why-page .why-intro-image > img {
+    min-height: 350px;
+
+    border-radius: 24px;
+  }
+
+
+  .why-page .why-image-badge {
+    left: 15px;
+
+    bottom: 15px;
+
+    padding: 14px 16px;
+  }
+
+
+  .why-page .why-intro-content h2 {
+    font-size: 2.3rem;
+  }
+
+
+  .why-page .why-check-list {
+    grid-template-columns: 1fr;
+  }
+
+
+  .why-page .why-advantages {
+    padding: 80px 20px;
+  }
+
+
+  .why-page .why-advantages-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .why-page .why-process {
+    padding: 90px 20px;
+  }
+
+
+  .why-page .why-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .why-page .why-industries {
+    padding: 80px 20px;
+  }
+
+
+  .why-page .why-industry-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .why-page .why-cta {
+    padding: 80px 20px 100px;
+  }
+
+
+  .why-page .why-cta-box {
+    padding: 70px 25px;
+
+    border-radius: 25px;
+  }
+
+
+  .why-page .why-cta-box h2 {
+    font-size: 2.3rem;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .why-page .why-hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+
+  .why-page .why-intro-content h2 {
+    font-size: 2rem;
+  }
+
+
+  .why-page .why-title-center h2 {
+    font-size: 1.9rem;
+  }
+
+
+  .why-page .why-advantage-card {
+    padding: 28px;
+
+    min-height: auto;
+  }
+
+
+  .why-page .why-process-card {
+    min-height: auto;
+
+    padding: 30px 25px;
+  }
+
+
+  .why-page .why-cta-box h2 {
+    font-size: 1.9rem;
+  }
+
+
+  .why-page .why-cta-box p {
+    font-size: 0.9rem;
+  }
+
+}

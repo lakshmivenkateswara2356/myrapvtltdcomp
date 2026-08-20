@@ -1,0 +1,175 @@
+/* ==========================================================================
+   HOME PAGE - PRODUCTION-GRADE SUNRISE TO CORAL RED GRADIENT BACKGROUND
+   Exclusive Palette:
+   - Top Sunrise: #F6B336 (Golden Yellow)
+   - Upper-Middle: #F77B2F (Warm Orange)
+   - Middle: #FA6330 (Sunset Orange)
+   - Bottom: #FF483D (Coral Red)
+   ========================================================================== */
+
+.homepage-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #F6B336 0%,
+    #F77B2F 33%,
+    #FA6330 66%,
+    #FF483D 100%
+  );
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Ambient glow accents using the exact palette for deep luxury finish */
+.homepage-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1000px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(246, 179, 54, 0.45) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.homepage-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1200px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(255, 72, 61, 0.4) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Transparent section backgrounds scoped exclusively to HomePage */
+.homepage-wrapper .hero,
+.homepage-wrapper .services-section-container,
+.homepage-wrapper .whyus-section-container,
+.homepage-wrapper .clients-section-container,
+.homepage-wrapper .industries-section-container,
+.homepage-wrapper .process-section-container,
+.homepage-wrapper .features-section {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Hero card styling on HomePage */
+.homepage-wrapper .hero-card {
+  background: rgba(18, 10, 5, 0.35) !important;
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+}
+
+/* Background blob adjustments to complement the warm gradient */
+.homepage-wrapper .orb-1,
+.homepage-wrapper .services-glow-top,
+.homepage-wrapper .clients-bg-glow {
+  background: radial-gradient(circle, rgba(246, 179, 54, 0.3) 0%, transparent 70%) !important;
+}
+
+.homepage-wrapper .orb-2,
+.homepage-wrapper .services-glow-bot,
+.homepage-wrapper .whyus-glow-left,
+.homepage-wrapper .process-bg-glow {
+  background: radial-gradient(circle, rgba(247, 123, 47, 0.3) 0%, transparent 70%) !important;
+}
+
+.homepage-wrapper .whyus-glow-right,
+.homepage-wrapper .industries-bg-glow {
+  background: radial-gradient(circle, rgba(250, 99, 48, 0.3) 0%, transparent 70%) !important;
+}
+
+/* Premium dark glassmorphism cards for maximum contrast and elegance */
+.homepage-wrapper .glass-service-card,
+.homepage-wrapper .whyus-card,
+.homepage-wrapper .client-logo-card,
+.homepage-wrapper .glass-industry-card,
+.homepage-wrapper .glass-process-card,
+.homepage-wrapper .feature-card,
+.homepage-wrapper .engineeringconten {
+  background: rgba(15, 8, 5, 0.52) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3) !important;
+}
+
+.homepage-wrapper .glass-service-card:hover,
+.homepage-wrapper .whyus-card:hover,
+.homepage-wrapper .client-logo-card:hover,
+.homepage-wrapper .glass-industry-card:hover,
+.homepage-wrapper .glass-process-card:hover,
+.homepage-wrapper .feature-card:hover {
+  background: rgba(25, 12, 8, 0.72) !important;
+  border-color: rgba(246, 179, 54, 0.6) !important;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.4), 0 0 35px rgba(246, 179, 54, 0.25) !important;
+}
+
+/* Badges & Pill Tags */
+.homepage-wrapper .services-eyebrow,
+.homepage-wrapper .whyus-eyebrow,
+.homepage-wrapper .clients-eyebrow,
+.homepage-wrapper .industries-eyebrow,
+.homepage-wrapper .process-eyebrow,
+.homepage-wrapper .badge {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #FFF3D6 !important;
+  backdrop-filter: blur(10px);
+}
+
+/* Headings & Accent Text */
+.homepage-wrapper .services-title-accent,
+.homepage-wrapper .whyus-title-accent,
+.homepage-wrapper .clients-title-accent,
+.homepage-wrapper .industries-title-accent,
+.homepage-wrapper .process-title-accent,
+.homepage-wrapper .hero-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFE5B4 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Typography contrast fixes */
+.homepage-wrapper .services-desc,
+.homepage-wrapper .whyus-desc,
+.homepage-wrapper .clients-desc,
+.homepage-wrapper .industries-desc,
+.homepage-wrapper .process-main-desc,
+.homepage-wrapper .paragraphs,
+.homepage-wrapper .service-card-body p,
+.homepage-wrapper .whyus-card p,
+.homepage-wrapper .industry-desc,
+.homepage-wrapper .process-card-desc,
+.homepage-wrapper .feature-desc {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.homepage-wrapper .service-icon-box,
+.homepage-wrapper .whyus-icon-box,
+.homepage-wrapper .industry-icon-wrap,
+.homepage-wrapper .process-icon-box,
+.homepage-wrapper .feature-icon-wrap {
+  background: rgba(246, 179, 54, 0.2) !important;
+  border-color: rgba(246, 179, 54, 0.4) !important;
+  color: #FFF0C2 !important;
+}
+
+/* Footer blend on Home Page */
+.homepage-wrapper .footer-section-container {
+  background-color: rgba(18, 8, 5, 0.45) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
