@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import ErrorBoundary from '../components/ErrorBoundary'
+import './HomePage.css'
 
 import DarkHeroSection from '../sections/DarkHeroSection'
 // import { OverviewSection } from '../sections/OverviewSection'
@@ -17,7 +18,7 @@ import { FooterSection } from '../sections/FooterSection'
 
 export function HomePage() {
   return (
-    <>
+    <div className="homepage-wrapper">
       <Navbar />
       <main>
         <ErrorBoundary fallbackName="Hero Section">
@@ -72,7 +73,7 @@ export function HomePage() {
       <ErrorBoundary fallbackName="Footer Section">
         <FooterSection />
       </ErrorBoundary>
-    </>
+    </div>
   )
 }
 
