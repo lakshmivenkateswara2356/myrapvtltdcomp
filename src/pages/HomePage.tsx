@@ -40,9 +40,9 @@ export function HomePage() {
           <StatisticsSection />
         </ErrorBoundary> */}
 
-        <ErrorBoundary fallbackName="Clients Section">
+        {/* <ErrorBoundary fallbackName="Clients Section">
           <ClientsSection />
-        </ErrorBoundary>
+        </ErrorBoundary> */}
 
         {/* <ErrorBoundary fallbackName="Testimonials Section">
           <TestimonialsSection />

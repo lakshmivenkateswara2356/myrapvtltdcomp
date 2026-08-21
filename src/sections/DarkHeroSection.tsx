@@ -5,10 +5,14 @@ import {
   useSpring,
   useTransform,
 } from 'framer-motion'
-import { useNavigate, useLocation } from 'react-router-dom'
+import {
+  NavLink,
+  useLocation,
+  useNavigate,
+} from 'react-router-dom'
 import './Hero.css'
 
-import heroVideo from '../assets/industrialanimation.mp4'
+import heroVideo from '../assets/aivediolog.mp4'
 import COmpalogog from '../assets/complogo.png'
 
 import {
@@ -135,7 +139,7 @@ export default function DarkHeroSection() {
      ROUTER
   ======================================================= */
 
-  const navigate = useNavigate()
+ const navigate = useNavigate()
   const location = useLocation()
 
   /* =======================================================
@@ -160,6 +164,7 @@ export default function DarkHeroSection() {
   /* =======================================================
      MOUSE PARALLAX
   ======================================================= */
+    const [showVideo, setShowVideo] = useState(true)
 
   const mouseX = useMotionValue(0)
   const mouseY = useMotionValue(0)
@@ -190,6 +195,19 @@ export default function DarkHeroSection() {
     [-0.5, 0.5],
     [-12, 12]
   )
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowVideo(window.innerWidth > 768)
+    }
+
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+
+    return () =>
+      window.removeEventListener('resize', handleResize)
+  }, [])
 
   /* =======================================================
      MOUSE MOVE
@@ -283,31 +301,25 @@ export default function DarkHeroSection() {
      NAVIGATION
   ======================================================= */
 
-  const handleNavigation = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    path: string
-  ) => {
-    e.preventDefault()
+ /* =======================================================
+   NAVIGATION
+======================================================= */
 
-    setMenuOpen(false)
+const handleNavigation = (
+  e: React.MouseEvent<HTMLAnchorElement>,
+  path: string
+) => {
+  e.preventDefault()
 
-    if (location.pathname === path) {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      })
+  setMenuOpen(false)
 
-      return
-    }
+  navigate(path)
 
-    navigate(path)
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'auto',
-    })
-  }
-
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto',
+  })
+}
   /* =======================================================
      CURRENT SERVICE
   ======================================================= */
@@ -358,6 +370,8 @@ export default function DarkHeroSection() {
         ================================================= */}
 
         <div className="hero-bg-lights">
+
+          
           <motion.div
             className="glow-orb orb-1"
             animate={{
@@ -378,6 +392,8 @@ export default function DarkHeroSection() {
               ease: 'easeInOut',
             }}
           />
+
+          
 
           <motion.div
             className="glow-orb orb-2"
@@ -401,26 +417,36 @@ export default function DarkHeroSection() {
           />
 
           <div className="hero-grid-glow" />
+
+          
         </div>
 
+
+
         {/* =================================================
-            BACKGROUND VIDEO
+            BACKGROUND VIDEO (lazy on small screens)
         ================================================= */}
 
-        <video
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          aria-hidden="true"
-        >
-          <source
-            src={heroVideo}
-            type="video/mp4"
+        {showVideo ? (
+          <video
+            className="hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-hidden="true"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        ) : (
+          <div
+            className="hero-video-fallback"
+            aria-hidden="true"
           />
-        </video>
+        )}
+
+        
 
         {/* =================================================
             OVERLAY
@@ -432,7 +458,12 @@ export default function DarkHeroSection() {
             NAVBAR
         ================================================= */}
 
-        <motion.header
+        
+
+        {/* =================================================
+            HERO MAIN CONTENT
+        ================================================= */}
+<motion.header
           className="hero-navbar"
           initial={{
             opacity: 0,
@@ -491,35 +522,42 @@ export default function DarkHeroSection() {
 
           {/* NAVIGATION */}
 
-          <nav
-            className={`nav-links ${
-              menuOpen ? 'open' : ''
-            }`}
-            aria-label="Main navigation"
-          >
-            {navItems.map((item) => (
-              <a
-                key={item.path}
-                href={item.path}
-                className={
-                  location.pathname ===
-                  item.path
-                    ? 'active'
-                    : ''
-                }
-                onClick={(e) =>
-                  handleNavigation(
-                    e,
-                    item.path
-                  )
-                }
-              >
-                {item.label}
-              </a>
-            ))}
-          </nav>
+       
+ <nav
+  className={`nav-links ${
+    menuOpen ? 'open' : ''
+  }`}
+  aria-label="Main navigation"
+>
+  {navItems.map((item) => (
+    <NavLink
+      key={item.path}
+      to={item.path}
+      className={({ isActive }) =>
+        isActive ? 'active' : ''
+      }
+      onClick={(e) => {
+        e.preventDefault()
 
+        console.log('Hero navbar clicked:', item.path)
+
+        setMenuOpen(false)
+
+        navigate(item.path)
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'auto',
+        })
+      }}
+    >
+      {item.label}
+    </NavLink>
+  ))}
+</nav>
           {/* CONTACT BUTTON */}
+
+          
 
           <a
             className="contact-btn"
@@ -540,12 +578,10 @@ export default function DarkHeroSection() {
             />
           </a>
         </motion.header>
-
-        {/* =================================================
-            HERO MAIN CONTENT
-        ================================================= */}
-
         <div className="hero-body-grid">
+          
+
+          
           {/* =================================================
               LEFT CONTENT
           ================================================= */}
